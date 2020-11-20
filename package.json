@@ -1,5 +1,5 @@
 {
-  "name": "employeetracker",
+  "name": "BobbysHobbys",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "Erik Tomlinson",
+  "author": "Erik Tomlinson, Aida Blinstrubyte, Katie Reid-Anderson, Zach Smelcer",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",

@@ -12,7 +12,7 @@ import music from "./music.json"
 //   </div>
 // );
 
-class Art extends Component {
+class Music extends Component {
 
   state = {
     music

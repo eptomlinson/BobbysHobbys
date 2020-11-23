@@ -14,7 +14,7 @@ import games from "./games.json"
 
 
 
-class Art extends Component {
+class Games extends Component {
 
   state = {
     games

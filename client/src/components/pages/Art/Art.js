@@ -10,24 +10,23 @@ class Art extends Component {
   };
 
   render() {
-return (
-    <div>
-      <h1>Art</h1>
-      {art.map(hobby=> (
-        <Card
-          id={hobby.id}
-          key={hobby.id}
-          name={hobby.name}
-          image={hobby.image}
-          cost={hobby.cost}
-          description={hobby.description}
-        />
-      ))}
-    </div>
+    return (
+      <div>
+        <h1>Art</h1>
+        {art.map(hobby => (
+          <Card
+            id={hobby.id}
+            key={hobby.id}
+            name={hobby.name}
+            image={hobby.image}
+            cost={hobby.cost}
+            description={hobby.description}
+          />
+        ))}
+      </div>
 
-) }
-      }
-    
-
+    )
+  }
+}
 
 export default Art;

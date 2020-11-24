@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Card from "../../Card"
 import Wrapper from "../../Wrapper";
 import music from "./music.json"

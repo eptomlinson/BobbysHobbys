@@ -1,5 +1,5 @@
 import React from "react";
-
+import PostModal from "./MakeAPost.js"
 function Navbar(props) {
 
 
@@ -17,13 +17,16 @@ return (
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <PostModal/>
   </nav>
   <h1 style={{fontFamily: "Monaco", fontSize: "100px"}}>BOBBY'S HOBBIES</h1>
 </div>
 ) 
+
 }
 
 export default Navbar;

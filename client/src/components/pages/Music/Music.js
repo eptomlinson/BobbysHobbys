@@ -20,8 +20,9 @@ class Music extends Component {
 
   render() {
 return (
-    <div>
-      <h1>Music</h1>
+  <div>
+  <h1>Music</h1>
+    <Wrapper>
       {music.map(hobby=> (
         <Card
           id={hobby.id}
@@ -31,10 +32,11 @@ return (
           cost={hobby.cost}
           description={hobby.description}
         />
-      ))}
-    </div>
-
-) }
-      }
+        ))}
+   
+        </Wrapper>
+        </div>
+    ) }
+          }
 
 export default Music;

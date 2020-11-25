@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "../../Card"
-import Wrapper from "../../Wrapper";
+import Wrapper from "../../Wrapper/index";
 import games from "./games.json"
 
 // const Games = () => {
@@ -25,8 +25,9 @@ class Games extends Component {
 
   render() {
 return (
-    <div>
-      <h1>Games</h1>
+  <div>
+     <h1>Games</h1>
+    <Wrapper>
       {games.map(hobby=> (
         <Card
           id={hobby.id}
@@ -36,10 +37,11 @@ return (
           cost={hobby.cost}
           description={hobby.description}
         />
-      ))}
-    </div>
-
-) }
-      }
+        ))}
+   
+        </Wrapper>
+        </div>
+    ) }
+          }
 
 export default Games;

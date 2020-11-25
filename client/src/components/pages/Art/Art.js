@@ -12,7 +12,9 @@ class Art extends Component {
   render() {
     return (
       <div>
-        <h1>Art</h1>
+      <h1>Art</h1>
+     <Wrapper>
+      
         {art.map(hobby => (
           <Card
             id={hobby.id}
@@ -23,8 +25,8 @@ class Art extends Component {
             description={hobby.description}
           />
         ))}
-      </div>
-
+     </Wrapper>
+     </div>
     )
   }
 }

@@ -17,7 +17,7 @@
       "id": 3,
       "name": "Drum Kit",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Pete_Sandoval_practising_the_drums.jpg/330px-Pete_Sandoval_practising_the_drums.jpg",
-      "cost": "Free",
-      "description": "Probably not the best instrument for apartment dwellers. The basic are rather simple, but it is physically demanding at high tempos."
+      "cost": "$350",
+      "description": "Probably not the best instrument for apartment dwellers. The basic are rather simple, but it is physically demanding at high tempos, and odd time signatures can take time to get used to."
     }
   ]

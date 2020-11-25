@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Running",
+      "image": "https://i.pinimg.com/originals/50/af/5c/50af5cb829ae11333c2608b84a3a8a2c.jpg",
+      "cost": "Free",
+      "description": "First you move one leg forward, then the other. Nothing to it. No equipment required, although a good pair of running shoes will set you back at least $60."
+    },
+    {
+      "id": 2,
+      "name": "Biking",
+      "image": "https://www.vermontvacation.com/~/media/images/things%20to%20do/recreation/boarderlands-mountain-biking.ashx?h=400&la=en&w=600",
+      "cost": "$500",
+      "description": "It's like riding a bike, because it is riding a bike! You could always get a cheapo bike from Walmart, but if you want something that will last, you probably need to shell out at least 500. Great way to build endurance and leg muscles. Watch out for the cars, they certainly won't be watching out for you."
+    },
+    {
+      "id": 3,
+      "name": "Weight Lifting",
+      "image": "https://i.imgur.com/H8Ua5bB.jpeg",
+      "cost": "$70",
+      "description": "Hulk SMASH! Not recommended for those with heart conditions or back problems. Start with lighter weights and work your way up. You don't necessarily have to spend any money, you could just lift heavy stuff around the house, but it is admittedly harder to track progress that way."
+    }
+  ]

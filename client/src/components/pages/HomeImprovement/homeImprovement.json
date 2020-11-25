@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Replace Toilet",
+      "image": "https://s3-production.bobvila.com/articles/wp-content/uploads/2018/07/draining-toilet.jpg",
+      "cost": "$130",
+      "description": "It is easier to do than it looks. Shut off the water, close the line to the toilet, remove the old toilet, and put the new one in, making sure to use the wax O-ring so that it is flat against the floor. You can shunt it if it won't stay flat. Oh, and you should have someone helping you, so you'll need to buy them pizza/beer afterwards."
+    },
+    {
+      "id": 2,
+      "name": "Painting a Room",
+      "image": "https://www.thespruce.com/thmb/E3OMSD3E9eJPhcYlG1-c_TSDQbY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Stocksy_txpdc39b9790by000_Medium_867684-5a958e10119fa80036fb82b6.jpg",
+      "cost": "$45",
+      "description": "Perhaps the cheapest way to give a room a whole new vibe. Paint is cheap, and so are brushes, trays, rollers, and drop cloths. The cost is your time; it is usually a long weekend project, and be sure to cover any furniture in the room!"
+    },
+    {
+      "id": 3,
+      "name": "Install Water Filter",
+      "image": "https://cdn.vox-cdn.com/thumbor/PAwwLO8roHuBe-KJvb_91gZQUEU=/0x0:400x400/1120x0/filters:focal(0x0:400x400):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19509180/10_diy_savings.jpg",
+      "cost": "$250",
+      "description": "Shut off the water, open faucet to release remaining water, connect adapter, push tubing through attaching it from the filter to the adapter, attach adapter to shut off valve, run sink. Done."
+    }
+  ]

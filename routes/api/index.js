@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const genericRoutes = require("./generic");
+const hobbiesRoutes = require("./hobbies");
 
-// generic routes
-router.use("/generic", genericRoutes);
+router.use("/hobbies", hobbiesRoutes);
 
 module.exports = router;

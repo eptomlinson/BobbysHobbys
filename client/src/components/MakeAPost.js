@@ -8,7 +8,7 @@ function PostModal(){
      Make a Post!
     </button>
 
-<div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog" role="document">
     <div className="modal-content">
       <div className="modal-header">
@@ -19,25 +19,25 @@ function PostModal(){
       </div>
       <div className="modal-body">
           <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of your hobby"/>
+                <div className="form-group">
+                    <label htmlFor="exampleInputEmail1">Name</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of your hobby"/>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Image</label>
+                <div className="form-group">
+                    <label htmlFor="exampleInputPassword1">Image</label>
                     <FileUpload/>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Cost</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the cost of your project"/>
+                <div className="form-group">
+                    <label htmlFor="exampleInputEmail1">Cost</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the cost of your project"/>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div className="form-group">
+                    <label htmlFor="exampleFormControlTextarea1">Description</label>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Choose a Category</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                <div className="form-group">
+                    <label htmlFor="exampleFormControlSelect1">Choose a Category</label>
+                    <select className="form-control" id="exampleFormControlSelect1">
                     <option>Cooking</option>
                     <option>Exercise</option>
                     <option>Art</option>
@@ -49,7 +49,7 @@ function PostModal(){
                     <option>Music</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Post!</button>
+                <button type="submit" className="btn btn-primary">Post!</button>
           </form>
           
       </div>

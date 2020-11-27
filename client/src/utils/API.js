@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export default {
+const API = {
   // Gets all books
   getHobbies: function() {
-    return axios.get("/api/books");
+    return axios.get("/api/hobbies");
   },
   // Gets the book with the given id
   getHobby: function(id) {
@@ -18,3 +18,6 @@ export default {
     return axios.post("/api/hobbies", hobbyData);
   }
 };
+
+
+export default API;

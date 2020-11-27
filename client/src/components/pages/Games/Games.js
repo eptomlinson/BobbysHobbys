@@ -1,17 +1,44 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../Card"
 import Wrapper from "../../Wrapper/index";
-import games from "./games.json"
+import API from "../../../utils/API";
 
 const Games = () => {
-  const [gamesState, setGamesState] = React.useState(games)
+  const [games, setGames] = useState([])
+  
+  function loadHobbies() {
+    API.getHobbies()
+      .then(res => 
+        setGames(res.data)
+      )
+      .catch(err => console.log(err));
+
+      console.log(games)
+  };
+
+
+  useEffect(() => {loadHobbies()}, [])
+
+  
+
+
   return (
-  <div>
-    <h1>Board and Tabletop Games</h1>
-    <p>
-different board games, chess, checkers, etc
-    </p>
-  </div>
+    <div>
+      <h1>Games</h1>
+      <Wrapper>
+        {games.map(hobby => (
+          <Card
+            id={hobby}
+            key={hobby.id}
+            name={hobby.name}
+            image={hobby.image}
+            cost={hobby.cost}
+            description={hobby.description}
+          />
+        ))}
+
+      </Wrapper>
+    </div>
   )
   };
 

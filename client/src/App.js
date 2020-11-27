@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Portfolio from './components/PortfolioContainer';
 import Jumbotron from './components/Jumbotron';

@@ -1,6 +1,6 @@
 // Dependencies
 const express = require('express');
-const routes = require('./routes');
+const routes = require("./routes");
 
 // Express instance
 const app = express();

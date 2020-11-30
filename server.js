@@ -5,7 +5,6 @@ const path = require("path");
 const session = require('express-session');
 const passport = require('./passport/index');
 const mongoose = require('mongoose');
-// const userRoutes = require('./routes/api/userRoutes')
 const app = express();
 
 // Middleware
@@ -15,15 +14,34 @@ app.use(express.json());
 // Variable Port
 const PORT = process.env.PORT || 3001;
 
+// var conn      = mongoose.createConnection('mongodb://localhost/Passport');
+// var conn2     = mongoose.createConnection('mongodb://localhost/hobbies');
+
+// // stored in 'testA' database
+// var ModelA    = conn.model('Passport', new mongoose.Schema({
+//   title : { type : String, default : 'model in testA database' }
+// }));
+
+// // stored in 'testB' database
+// var ModelB    = conn2.model('hobbies', new mongoose.Schema({
+//   title : { type : String, default : 'model in testB database' }
+// }));
+
+
+
 mongoose.connect(
-	process.env.MONGODB_URI || 'mongodb://localhost/Passport',
+    
+	process.env.MONGODB_URI || 'mongodb://localhost/hobbies',
 	{
 	  useNewUrlParser: true,
 	  useUnifiedTopology: true,
 	  useCreateIndex: true,
 	  useFindAndModify: false
-	}
+    }
+
 )
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hobbies");
 
 app.use(session({
   secret: "key",
@@ -36,9 +54,6 @@ app.use(passport.session())
 
 // app.use("/api/users", userRoutes);
 app.use(routes);
-
-
-
 
 
 // If our node environment is production we will serve up our static assets from the build folder

@@ -1,34 +1,44 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../Card"
-import Wrapper from "../../Wrapper";
-import art from "./art.json"
+import Wrapper from "../../Wrapper/index";
+import API from "../../../utils/API";
 
-class Art extends Component {
+const Art = () => {
+  const [art, setArt] = useState([])
 
-  state = {
-    art
+
+  useEffect(() => {
+    loadArt()
+  },[])
+
+  function loadArt() {
+    API.getArt()
+      .then(res => 
+        setArt(res.data)
+      )
+      .catch(err => console.log(err));
   };
+  
 
-  render() {
-    return (
-      <div>
+  return (
+    <div>
       <h1>Art</h1>
-     <Wrapper>
-      
+      <Wrapper>
         {art.map(hobby => (
           <Card
-            id={hobby.id}
-            key={hobby.id}
+            id={hobby._id}
+            key={hobby._id}
             name={hobby.name}
             image={hobby.image}
             cost={hobby.cost}
             description={hobby.description}
           />
         ))}
-     </Wrapper>
-     </div>
-    )
-  }
-}
+
+      </Wrapper>
+    </div>
+  )
+  };
+
 
 export default Art;

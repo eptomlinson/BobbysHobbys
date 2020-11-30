@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../models/index")
 
 // need to change the data so it fits our hobbies (see the first one in hobbyseed)
 
@@ -134,7 +134,7 @@ const hobbySeed = [
     image: "https://s3-production.bobvila.com/articles/wp-content/uploads/2018/07/draining-toilet.jpg",
     cost: "$130",
     description: "It is easier to do than it looks. Shut off the water, close the line to the toilet, remove the old toilet, and put the new one in, making sure to use the wax O-ring so that it is flat against the floor. You can shunt it if it won't stay flat. Oh, and you should have someone helping you, so you'll need to buy them pizza/beer afterwards.",
-    category: "homeImprovement",
+    category: "homeimprovement",
     date: new Date(Date.now())
   },
   {
@@ -142,7 +142,7 @@ const hobbySeed = [
     image: "https://www.thespruce.com/thmb/E3OMSD3E9eJPhcYlG1-c_TSDQbY=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Stocksy_txpdc39b9790by000_Medium_867684-5a958e10119fa80036fb82b6.jpg",
     cost: "$45",
     description: "Perhaps the cheapest way to give a room a whole new vibe. Paint is cheap, and so are brushes, trays, rollers, and drop cloths. The cost is your time; it is usually a long weekend project, and be sure to cover any furniture in the room!",
-    category: "homeImprovement",
+    category: "homeimprovement",
     date: new Date(Date.now())
   },
   {
@@ -150,7 +150,7 @@ const hobbySeed = [
     image: "https://cdn.vox-cdn.com/thumbor/PAwwLO8roHuBe-KJvb_91gZQUEU=/0x0:400x400/1120x0/filters:focal(0x0:400x400):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19509180/10_diy_savings.jpg",
     cost: "$250",
     description: "Shut off the water, open faucet to release remaining water, connect adapter, push tubing through attaching it from the filter to the adapter, attach adapter to shut off valve, run sink. Done.",
-    category: "homeImprovement",
+    category: "homeimprovement",
     date: new Date(Date.now())
   },
   {
@@ -206,7 +206,7 @@ const hobbySeed = [
     image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/70/7b/6d.jpg",
     cost: "$1200",
     description: "Cover your legs and watch your feet! Oh, and get comfortable using a clutch (most ATVs have one). And no, you're not 'too cool' to wear a helmet. This is an expensive one to start, but it is exhilarating.",
-    category: "thrillSeeking",
+    category: "thrillseeking",
     date: new Date(Date.now())
   },
   {
@@ -214,7 +214,7 @@ const hobbySeed = [
     image: "https://wnyskydiving.com/wp-content/uploads/2019/01/skydiving-experience-kaila-proulx-tandem.jpeg",
     cost: "$99",
     description: "See you at the bottom! The most important requirement is that you have nerves of steel (you will be jumping out of an airplane at about 10,000 feet up). You will receive training wherever you go, and most places make first timers jump with a guide attached to them who will make sure the chute is packed right.",
-    category: "thrillSeeking",
+    category: "thrillseeking",
     date: new Date(Date.now())
   },
   {
@@ -222,7 +222,7 @@ const hobbySeed = [
     image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/c1/2f/53.jpg",
     cost: "$1200",
     description: "One of the more dangerous hobbies for so many reasons. The gear and classes (which are mandatory, with good reason) is prohibitively expensive, but the things you'll see on your dives will blow your mind.",
-    category: "thrillSeeking",
+    category: "thrillseeking",
     date: new Date(Date.now())
   },
 ];

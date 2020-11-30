@@ -5,9 +5,14 @@ import API from "../../../utils/API";
 
 const Games = () => {
   const [games, setGames] = useState([])
-  
-  function loadHobbies() {
-    API.getHobbies()
+
+
+  useEffect(() => {
+    loadGames()
+  },[])
+
+  function loadGames() {
+    API.getGames()
       .then(res => 
         setGames(res.data)
       )
@@ -15,12 +20,7 @@ const Games = () => {
 
       console.log(games)
   };
-
-
-  useEffect(() => {loadHobbies()}, [])
-
   
-
 
   return (
     <div>
@@ -28,8 +28,8 @@ const Games = () => {
       <Wrapper>
         {games.map(hobby => (
           <Card
-            id={hobby}
-            key={hobby.id}
+            id={hobby._id}
+            key={hobby._id}
             name={hobby.name}
             image={hobby.image}
             cost={hobby.cost}
@@ -42,33 +42,5 @@ const Games = () => {
   )
   };
 
-
-
-// class Games extends Component {
-
-//   state = {
-//     games
-//   };
-
-//   render() {
-// return (
-//   <div>
-//      <h1>Games</h1>
-//     <Wrapper>
-//       {games.map(hobby=> (
-//         <Card
-//           id={hobby.id}
-//           key={hobby.id}
-//           name={hobby.name}
-//           image={hobby.image}
-//           cost={hobby.cost}
-//           description={hobby.description}
-//         />
-//         ))}
-   
-//         </Wrapper>
-//         </div>
-//     ) }
-//           }
 
 export default Games;

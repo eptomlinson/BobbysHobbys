@@ -1,3 +1,3 @@
 module.exports = {
-  Hobby: require("./hobbies")
+  Hobby: require("./hobby")
 };

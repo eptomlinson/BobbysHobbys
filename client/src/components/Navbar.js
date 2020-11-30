@@ -10,7 +10,7 @@ return (
       <h4 className="text-white">Bobby's Hobbies</h4>
       <span className="text-muted">Your Leisure Liaison</span>
       <a className="nav-item nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
-      <a className="nav-item nav-link" href="#">Login</a>
+      <a className="nav-item nav-link" href="/">Login</a>
       <a className="nav-item nav-link" href="#">About</a>
       <a className="nav-item nav-link" href="#">Contact Us</a>
       <a className="nav-item nav-link" href="#">Logout</a>

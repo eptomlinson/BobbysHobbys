@@ -1,6 +1,5 @@
 const db = require("../../models/index");
 
-// Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
     db.Hobby

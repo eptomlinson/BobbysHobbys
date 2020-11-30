@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
-var passport = require("passport-local")
+var passport = require("passport")
 
 
 
-  function Login () {
+const Login = () => {
     const [firstName, setFirstName] = React.useState("")
     const [lastName, setLastName] = React.useState("")
     const [email, setEmail] = React.useState("")
@@ -61,7 +61,6 @@ var passport = require("passport-local")
             })
           }
 
-          
 
     return( 
         <div>

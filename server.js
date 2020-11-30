@@ -5,7 +5,7 @@ const path = require("path");
 const session = require('express-session');
 const passport = require('./passport/index');
 const mongoose = require('mongoose');
-const userRoutes = require('./routes/userRoutes')
+// const userRoutes = require('./routes/api/userRoutes')
 const app = express();
 
 // Middleware
@@ -34,7 +34,8 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use("/api/users", userRoutes);
+// app.use("/api/users", userRoutes);
+app.use(routes);
 
 
 
@@ -45,10 +46,10 @@ if (process.env.NODE_ENV === 'production') {
     // The react app is called 'client' and we are accessing the build folder that is initialized in the postbuild scripts.
     app.use(express.static('client/build'))
 };
-
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
+app.use(express.static('client/build'));
+// app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+//   });
 
 // Start the server
 app.listen(PORT, function() {

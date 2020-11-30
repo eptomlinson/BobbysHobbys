@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Card from "../../Card"
+import Wrapper from "../../Wrapper/index";
+import API from "../../../utils/API";
 
-const ThrillSeeking = () => (
-  <div>
-    <h1>Thrill Seeking</h1>
-    <p>
-bungee jumping, skydiving, BMX, Heli-Skiing, Ice Climbing
-    </p>
-  </div>
-);
+const ThrillSeeking = () => {
+  const [thrillSeeking, setThrillSeeking] = useState([])
+
+
+  useEffect(() => {
+    loadThrillSeeking()
+  },[])
+
+  function loadThrillSeeking() {
+    API.getThrillSeeking()
+      .then(res => 
+        setThrillSeeking(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+  
+
+  return (
+    <div>
+      <h1>ThrillSeeking</h1>
+      <Wrapper>
+        {thrillSeeking.map(hobby => (
+          <Card
+            id={hobby._id}
+            key={hobby._id}
+            name={hobby.name}
+            image={hobby.image}
+            cost={hobby.cost}
+            description={hobby.description}
+          />
+        ))}
+
+      </Wrapper>
+    </div>
+  )
+  };
+
 
 export default ThrillSeeking;

@@ -1,5 +1,5 @@
 import React from "react";
-import PostModal from "./MakeAPost.js"
+import PostModal from "./MakeAPost"
 function Navbar(props) {
 
 

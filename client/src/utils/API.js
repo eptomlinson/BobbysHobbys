@@ -5,6 +5,33 @@ const API = {
   getHobbies: function() {
     return axios.get("/api/hobbies");
   },
+  getArt: function() {
+    return axios.get("/api/hobbies?category=art");
+  },
+  getCooking: function() {
+    return axios.get("/api/hobbies?category=cooking");
+  },
+  getEntertainment: function() {
+    return axios.get("/api/hobbies?category=entertainment");
+  },
+  getExercise: function() {
+    return axios.get("/api/hobbies?category=exercise");
+  },
+  getGames: function() {
+    return axios.get("/api/hobbies?category=games");
+  },
+  getHomeImprovement: function() {
+    return axios.get("/api/hobbies?category=homeimprovement");
+  },
+  getMusic: function() {
+    return axios.get("/api/hobbies?category=music");
+  },
+  getOutdoors: function() {
+    return axios.get("/api/hobbies?category=outdoors");
+  },
+  getThrillSeeking: function() {
+    return axios.get("/api/hobbies?category=thrillseeking");
+  },
   // Gets the book with the given id
   getHobby: function(id) {
     return axios.get("/api/hobbies/" + id);

@@ -1,5 +1,6 @@
 import React from "react";
 import FileUpload from "./FileUploader.js"
+import categories from "./Modal/categories"
 
 function PostModal(){
     return (
@@ -38,15 +39,9 @@ function PostModal(){
                 <div className="form-group">
                     <label htmlFor="exampleFormControlSelect1">Choose a Category</label>
                     <select className="form-control" id="exampleFormControlSelect1">
-                    <option>Cooking</option>
-                    <option>Exercise</option>
-                    <option>Art</option>
-                    <option>Entertainment</option>
-                    <option>Games</option>
-                    <option>Home Improvement</option>
-                    <option>Outdoors</option>
-                    <option>Thrill Seeking</option>
-                    <option>Music</option>
+                    {categories.map(category => (  
+                    <option>{category.title}</option>
+                    ))}
                     </select>
                 </div>
                 <button type="submit" className="btn btn-primary">Post!</button>

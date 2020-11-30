@@ -1,42 +1,43 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../Card"
-import Wrapper from "../../Wrapper";
-import music from "./music.json"
+import Wrapper from "../../Wrapper/index";
+import API from "../../../utils/API";
 
-// const Music = () => (
-//   <div>
-//     <h1>Music</h1>
-//     <p>
-// Guitar, Write a song, concerts, music history and theory
-//     </p>
-//   </div>
-// );
+const Music = () => {
+  const [music, setMusic] = useState([])
 
-class Music extends Component {
+  useEffect(() => {
+    loadMusic()
+  },[])
 
-  state = {
-    music
+  function loadMusic() {
+    API.getMusic()
+      .then(res => 
+        setMusic(res.data)
+      )
+      .catch(err => console.log(err));
+
+      console.log(music)
   };
-
-  render() {
-return (
-  <div>
-  <h1>Music</h1>
-    <Wrapper>
-      {music.map(hobby=> (
-        <Card
-          id={hobby.id}
-          key={hobby.id}
-          name={hobby.name}
-          image={hobby.image}
-          cost={hobby.cost}
-          description={hobby.description}
-        />
+  
+  return (
+    <div>
+      <h1>Music</h1>
+      <Wrapper>
+        {music.map(hobby => (
+          <Card
+            id={hobby._id}
+            key={hobby._id}
+            name={hobby.name}
+            image={hobby.image}
+            cost={hobby.cost}
+            description={hobby.description}
+          />
         ))}
-   
-        </Wrapper>
-        </div>
-    ) }
-          }
+
+      </Wrapper>
+    </div>
+  )
+};
 
 export default Music;

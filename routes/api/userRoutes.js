@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const passport = require('../passport/index')
-const db = require('../models')
+const passport = require('../../passport/index')
+const db = require('../../models')
 
 
 router.post("/login",  function (req, res, next) {

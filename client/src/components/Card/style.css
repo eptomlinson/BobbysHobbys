@@ -1,7 +1,7 @@
 .card {
     background: #fff;
     border-radius: 2px;
-    height: 340px;
+    height: 465px;
     margin: 1rem;
     position: relative;
     width: 325px;
@@ -13,7 +13,7 @@
     height: 500px;
     overflow: hidden;
     text-align: center;
-    background:#6CADDC;
+    background:#fff;
   }
   .card > .img-container > img {
     width: 100%;
@@ -23,7 +23,7 @@
   .card > .content {
     padding-left: 1rem;
     padding-right: 1rem;
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .card > .content > ul {

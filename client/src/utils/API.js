@@ -42,6 +42,7 @@ const API = {
   },
   // Saves a book to the database
   saveHobby: function(hobbyData) {
+    console.log(hobbyData);
     return axios.post("/api/hobbies", hobbyData);
   }
 };

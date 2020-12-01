@@ -51,7 +51,7 @@ const hobbySeed = [
   },
   {
     name: "Sous Vide",
-    image: "https://i.imgur.com/H8Ua5bB.jpeg",
+    image: "https://www.williams-sonoma.com/products/all-clad-sous-vide/#viewLargerHeroOverlay",
     cost: "$90",
     description: "Once limited to professional kitchens, sous vide (pronounced sue-veed) is a cooking technique that utilizes precise temperature control to deliver consistent, restaurant-quality results. You'll need a precision cooker, which well set you back, as well as some ziplock bags.",
     category: "cooking",

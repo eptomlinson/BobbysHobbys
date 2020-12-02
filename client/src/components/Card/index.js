@@ -1,13 +1,23 @@
 import React from "react";
 import Wrapper from "../Wrapper";
+import FavoriteBtn from "../Favorite"
 import "./style.css";
 
 function Card(props) {
-    console.log(props)
+
+// function favoriteHobby(id){
+//   API.saveHobbyToFavorite(id)
+
+//   //change the color of the favoriteBTN to red.
+
+// }
+
+
   return (
       <Wrapper>
     <div className="card">
       <div className="img-container">
+       
         <img alt={props.name} src={props.image} />
       </div>
       <div className="content">
@@ -21,7 +31,11 @@ function Card(props) {
           <li>
             <strong>Description:</strong> {props.description}
           </li>
+       
+          < FavoriteBtn/>
+         
         </ul>
+       
       </div>
     </div>
     </Wrapper>

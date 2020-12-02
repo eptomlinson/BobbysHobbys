@@ -6,33 +6,20 @@ import redfavorite from "./redfavorite.png"
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
 function FavoriteBtn(props) {
-    const [isfavorite, toggleIsOn] = useState();
-    // function changePicture()
-    //  var favoriteBtn = document.querySelector("favorite-btn")
-    //  favoriteBtn.setAttribute("className", "clicked")
-    // }
+    const [state, setState] = useState(true);
+
+    function toggle() {
+      setState(!state);
+    }
 
    
   return (
-    <>
-    {/* {isfavorite ? favorite : redfavorite} */}
-    <div onClick={toggleIsOn} className="favorite-btn" {...props} role="button" tabIndex="0">
-      <img style={{height: 60}} src={favorite}></img>
+    <div onClick={toggle} className="favorite-btn" {...props} role="button" tabIndex="0">
+     {state ? <img style={{height: 60}} src={favorite}></img> : <img style={{height: 60}} src={redfavorite}></img>}
     </div>
-    </>
+    
   );
 }
-
-
-// const [isfavorite, toggleIsOn] = useToggle();
-// return (
-//   <>
-//     {isfavorite ? src={favorite} : src={redfavorite}}
-//     <button onClick={toggleIsOn}>
-//       Press me
-//     </button>
-//   </>
-// )
 
 
 

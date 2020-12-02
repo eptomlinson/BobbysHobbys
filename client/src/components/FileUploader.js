@@ -1,33 +1,54 @@
-import React from "react";
-/**
- * Component to handle file upload. Works for image
- * uploads, but can be edited to work for any file.
- */
-function FileUpload(props) {
-  // State to store uploaded file
-  const [file, setFile] = React.useState("");
-  // Handles file upload event and updates state
-  function handleUpload(event) {
-    setFile(event.target.files[0]);
-    console.log()
-    // Add code here to upload file to server
-    // ...
-  }
-  
+import React, {useState} from 'react';
+
+
+function ImageUploader(props) {
+const [imgUrl, setImage] = useState()
+const [loading, setLoading] = useState(false)
+
+const uploadImage = async e => {
+  const files = e.target.files
+  const data = new FormData()
+  data.append('file', files[0])
+  data.append('upload_preset', 'ethereal')
+  setLoading(true)
+  const res = await fetch(
+    'https://api.cloudinary.com/v1_1/dmoc5klfw/image/upload',
+    {
+      method: 'POST',
+      body: data
+    }
+  )
+  const file = await res.json()
+
+  console.log(file.secure_url);
+
+  setImage(file.secure_url)
+  setLoading(false)
+
+
+}
+
+
   return (
-    <div id="upload-box">
-      <input type="file" onChange={handleUpload} name="image"/>
-      <p>Filename: {file.name}</p>
-      <p>File type: {file.type}</p>
-      <p>File size: {file.size} bytes</p>
-      {file && <ImageThumb image={file} />}
+    <div className="App">
+      <p>Upload Image</p>
+      <input 
+      type='file'
+      name='file'
+      placeholder='Upload an image'
+      onChange={uploadImage}
+      style={{margin: 15, textAlign: 'center'}}
+      />
+      {loading ? (
+        <p>Creating Image URL...</p>
+      ): (
+        <input name="image" value={imgUrl} onChange={props.onChange}/>
+      )}
     </div>
   );
 }
-/**
- * Component to display thumbnail of image.
- */
-const ImageThumb = ({ image }) => {
-  return <img src={URL.createObjectURL(image)} alt={image.name} style={{height: 100}} />;
-};
-export default FileUpload;
+
+
+
+
+export default ImageUploader;

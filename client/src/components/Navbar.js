@@ -1,6 +1,7 @@
 import React, {useState}from "react";
 import PostModal from "./MakeAPost";
 import API from "../utils/API";
+import {handleLogoutUser} from "../components/Login/Login"
 
 function Navbar(props) {
 const [formObject, setFormObject] = useState({})
@@ -47,6 +48,7 @@ return (
     </div>
   </div>
   <nav className="navbar navbar-dark bg-dark">
+  <button onClick={handleLogoutUser} type="button" class="btn btn-outline-primary">Logout</button>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

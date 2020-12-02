@@ -7,23 +7,30 @@ const [formObject, setFormObject] = useState({})
 
 function handleInputChange(event) {
   const { name, value } = event.target;
+  // console.log(name, value);
   setFormObject({...formObject, [name]: value})
+
 };
 
-function handleFormSubmit(event) {
+
+
+function handleFormSubmit(event, image) {
   event.preventDefault();
-  console.log(JSON.stringify(formObject));
+  console.log(formObject, image);
+
 
     API.saveHobby({
       name: formObject.name,
-      image: formObject.image,
+      image: image,
       cost: formObject.cost,
       description: formObject.description,
       category: formObject.category
     })
       .catch(err => console.log(err));
 
-  console.log("saveHobby went through")
+    alert("Your post has been posted!");
+    window.location.reload();
+  
 };
 
 return (
@@ -43,7 +50,7 @@ return (
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <PostModal onChange={handleInputChange} submitPost={handleFormSubmit}/>
+    <PostModal onChange={handleInputChange} submitPost={handleFormSubmit} />
   </nav>
   <h1 style={{fontFamily: "Monaco", fontSize: "100px"}}>BOBBY'S HOBBIES</h1>
 </div>

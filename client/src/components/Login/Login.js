@@ -47,7 +47,8 @@ const Login = (props) => {
                 console.log("logged in user")
                 // window.location.reload()
                 setLoggedIn(true)
-                window.location.href = "/home"
+                props.toggle()
+                // window.location.href = "/home"
 
             })
             // this.setState({
@@ -98,7 +99,7 @@ const Login = (props) => {
             <br></br>
             <form onSubmit={handleLoginUser}>
                 <input value={inputEmail} placeholder="input email" onChange={e => setInputEmail(e.target.value)} />
-                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} />
+                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} type="password" />
                 <button type="submit">Login</button>
                 <br></br>
                 {errorMessage}
@@ -112,7 +113,7 @@ const Login = (props) => {
 }
 
 export const handleLogoutUser = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     console.log("loggingout")
     axios.get("/api/users/logout", {
       

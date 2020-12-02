@@ -1,5 +1,12 @@
 .favorite-btn {
     float: right;
+
+    /* background-color: #e74944; */
+}
+
+.favorite-btn :hover {
+    color: red
+    
     /* background-color: #e74944; */
 }
   

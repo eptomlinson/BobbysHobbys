@@ -11,8 +11,10 @@ const Login = (props) => {
     const [inputPassword, setInputPassword] = React.useState("")
     const [inputEmail, setInputEmail] = React.useState("")
     const [user, setUser] = React.useState(null)
+    
     const [loggedIn, setLoggedIn] = React.useState()
     const [errorMessage, setErrorMessage] = React.useState("")
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("hello")
@@ -43,8 +45,9 @@ const Login = (props) => {
             })
             // this.setState({
             // redirectTo: '/home'})
-            .catch(error => {
-                console.log(error)
+
+            .catch(error => { 
+                console.log(error) 
                 setErrorMessage("User doesn't exist")
             })
     }
@@ -87,9 +90,13 @@ const Login = (props) => {
                 {errorMessage}
                 {/* <button onClick={Login}>Login</button> */}
             </form>
+
+            
         </div>
+        
     )
 }
+
 export const handleLogoutUser = (e) => {
     // e.preventDefault()
     console.log("loggingout")
@@ -99,6 +106,7 @@ export const handleLogoutUser = (e) => {
             console.log(res)
             // setLoggedIn(false)
             window.location.href = "/"
+
         })
 }
 export default Login;

@@ -16,6 +16,7 @@ const Login = (props) => {
     const [user, setUser] = React.useState(null)
 
     const [loggedIn, setLoggedIn] = React.useState()
+    const [errorMessage, setErrorMessage] = React.useState("")
 
 
     const handleSubmit = (e) => {
@@ -51,7 +52,10 @@ const Login = (props) => {
             })
             // this.setState({
             // redirectTo: '/home'})
-            .catch(error => { console.log(error) })
+            .catch(error => { 
+                console.log(error) 
+                setErrorMessage("User doesn't exist")
+            })
     }
 
 
@@ -96,10 +100,30 @@ const Login = (props) => {
                 <input value={inputEmail} placeholder="input email" onChange={e => setInputEmail(e.target.value)} />
                 <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} />
                 <button type="submit">Login</button>
+                <br></br>
+                {errorMessage}
                 {/* <button onClick={Login}>Login</button> */}
             </form>
+
+            
         </div>
+        
     )
+}
+
+export const handleLogoutUser = (e) => {
+    e.preventDefault()
+    console.log("loggingout")
+    axios.get("/api/users/logout", {
+      
+    })
+
+        .then(function (res) {
+            console.log(res)
+            // setLoggedIn(false)
+            window.location.href = "/"
+            
+        })
 }
 
 

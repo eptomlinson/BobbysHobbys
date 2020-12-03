@@ -3,9 +3,6 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import "./style.css";
 var passport = require("passport")
-
-
-
 const Login = (props) => {
     const [firstName, setFirstName] = React.useState("")
     const [lastName, setLastName] = React.useState("")
@@ -14,10 +11,9 @@ const Login = (props) => {
     const [inputPassword, setInputPassword] = React.useState("")
     const [inputEmail, setInputEmail] = React.useState("")
     const [user, setUser] = React.useState(null)
-
+    
     const [loggedIn, setLoggedIn] = React.useState()
     const [errorMessage, setErrorMessage] = React.useState("")
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -27,14 +23,11 @@ const Login = (props) => {
             last_name: lastName,
             email: email,
             password: password,
-
         })
-
             .then(function (res) {
                 console.log(res)
             })
     }
-
     const handleLoginUser = (e) => {
         e.preventDefault()
         console.log("something");
@@ -47,19 +40,18 @@ const Login = (props) => {
                 console.log("logged in user")
                 // window.location.reload()
                 setLoggedIn(true)
-                window.location.href = "/home"
+                props.toggle()
+                // window.location.href = "/home"
 
             })
             // this.setState({
             // redirectTo: '/home'})
+
             .catch(error => { 
                 console.log(error) 
                 setErrorMessage("User doesn't exist")
             })
     }
-
-
-
     React.useEffect(() => {
         axios.get("/api/users/info")
             .then(function (res) {
@@ -67,7 +59,6 @@ const Login = (props) => {
                 setUser(res.data)
             })
     }, [])
-
     function Login() {
         passport.authenticate('local', {
             successRedirect: '/home',
@@ -75,8 +66,6 @@ const Login = (props) => {
             failureFlash: true
         })
     }
-
-
     return (
         <div>
             {(user) &&
@@ -85,8 +74,6 @@ const Login = (props) => {
             <form onSubmit={handleSubmit}>
                 <input value={firstName} placeholder="first name" onChange={e => setFirstName(e.target.value)} />
                 <br></br>
-
-
                 <input value={lastName} placeholder="last name" onChange={e => setLastName(e.target.value)} />
                 <br></br>
                 <input value={email} placeholder="email" onChange={e => setEmail(e.target.value)} />
@@ -98,7 +85,7 @@ const Login = (props) => {
             <br></br>
             <form onSubmit={handleLoginUser}>
                 <input value={inputEmail} placeholder="input email" onChange={e => setInputEmail(e.target.value)} />
-                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} />
+                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} type="password" />
                 <button type="submit">Login</button>
                 <br></br>
                 {errorMessage}
@@ -112,19 +99,15 @@ const Login = (props) => {
 }
 
 export const handleLogoutUser = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     console.log("loggingout")
     axios.get("/api/users/logout", {
-      
     })
-
         .then(function (res) {
             console.log(res)
             // setLoggedIn(false)
             window.location.href = "/"
-            
+
         })
 }
-
-
 export default Login;

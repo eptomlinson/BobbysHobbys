@@ -8,6 +8,8 @@ import {useState} from 'react';
 import Login from "./components/Login/Login"
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false)
+
+
   const toggle = () => {
     setisLoggedIn(!isLoggedIn);
   }
@@ -15,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          {/* <Route exact path="/" component={Login}> */}
+    
           {/* </Route> */}
           <Route exact path="/">
             {isLoggedIn ? <Home toggle={toggle} /> : <Login toggle = {toggle} />}

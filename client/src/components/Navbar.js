@@ -34,6 +34,11 @@ function handleFormSubmit(event, image) {
   
 };
 
+function handleClick(event){
+  event.preventDefault();
+  props.toggle();
+  handleLogoutUser()
+}
 return (
 <div className="pos-f-t">
   <div className="collapse" id="navbarToggleExternalContent">
@@ -48,7 +53,7 @@ return (
     </div>
   </div>
   <nav className="navbar navbar-dark bg-dark">
-  <button onClick={handleLogoutUser} type="button" class="btn btn-outline-primary">Logout</button>
+  <button onClick={handleClick} type="button" class="btn btn-outline-primary">Logout</button>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

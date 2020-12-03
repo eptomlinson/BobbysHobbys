@@ -42,6 +42,7 @@ const Login = (props) => {
                 setLoggedIn(true)
                 props.toggle()
                 // window.location.href = "/home"
+
             })
             // this.setState({
             // redirectTo: '/home'})

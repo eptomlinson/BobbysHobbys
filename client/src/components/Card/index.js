@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "../Wrapper";
-import FavoriteBtn from "../Favorite"
+import FavoriteBtn from "../Favorite-Btn"
 import "./style.css";
 
 function Card(props) {

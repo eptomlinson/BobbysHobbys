@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'reactstrap';
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import "./style.css";
@@ -52,8 +53,8 @@ const Login = (props) => {
             })
             // this.setState({
             // redirectTo: '/home'})
-            .catch(error => { 
-                console.log(error) 
+            .catch(error => {
+                console.log(error)
                 setErrorMessage("User doesn't exist")
             })
     }
@@ -78,48 +79,94 @@ const Login = (props) => {
 
 
     return (
-        <div>
+        <div style={{ marginBottom: 10 }}>
+            <div  style={{width: '100%'}}>
+                <nav  style={{width: '100%'}}>
+                    <h1 style={{textAlign: 'center', backgroundColor: '#ffa64d'}}>| BOBBY'S HOBBY'S |</h1>
+                </nav>
+            </div>
+
             {(user) &&
                 <p>Welcome {user.first_name}!!</p>
             }
-            <form onSubmit={handleSubmit}>
-                <input value={firstName} placeholder="first name" onChange={e => setFirstName(e.target.value)} />
-                <br></br>
 
 
-                <input value={lastName} placeholder="last name" onChange={e => setLastName(e.target.value)} />
-                <br></br>
-                <input value={email} placeholder="email" onChange={e => setEmail(e.target.value)} />
-                <br></br>
-                <input value={password} placeholder="password" onChange={e => setPassword(e.target.value)} />
-                <br></br>
-                <button>sign up</button>
+            <form onSubmit={handleLoginUser} style={{border: '2px solid #ccc', borderRadius: '5px', width: '75%', align: 'center', marginLeft: '12.5%', marginRight: '12.5%', marginTop: '10%', backgroundColor: "#DCDCDC"}}>
+            <h1 style={{fontFamily: "'Epilogue', sans-serif", marginTop: 10}}>LOG IN</h1>
+                <hr/>
+                <div class="form-group">
+                    <input value={inputEmail} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/> 
+                </div>
+                    <div class="form-group">
+                    <input value={inputPassword} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                </div>
+                <Button color="primary" style={{marginBottom: 10}} onClick={Login}>Log In</Button>
+                {errorMessage}
             </form>
-            <br></br>
-            <form onSubmit={handleLoginUser}>
+
+                        {/* <form onSubmit={handleLoginUser} style={{border: '2px solid #ccc', borderRadius: '5px', width: '50%', align: 'center', marginLeft: '25%', marginRight: '25%', backgroundColor: "#DCDCDC"}}>
+                <h1 style={{fontFamily: "'Epilogue', sans-serif", marginTop: 10}}>LOG IN</h1>
+                <hr/>
                 <input value={inputEmail} placeholder="input email" onChange={e => setInputEmail(e.target.value)} />
-                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} />
-                <button type="submit">Login</button>
+                <br></br>
+                <input value={inputPassword} placeholder="input password" onChange={e => setInputPassword(e.target.value)} style={{margin: 10}}/>
+                <br></br>
+                <Button color="primary" style={{marginBottom: 10}}>Log In</Button>
                 <br></br>
                 {errorMessage}
                 {/* <button onClick={Login}>Login</button> */}
+                        {/* </form> */}
+
+                        <br></br>
+                        <h3>~OR~</h3>
+                        <br></br>
+
+                <form onSubmit={handleSubmit} style={{border: '2px solid #ccc', borderRadius: '5px', width: '75%', align: 'center', marginLeft: '12.5%', marginRight: '12.5%', backgroundColor: "#DCDCDC"}}>
+            <h1 style={{fontFamily: "'Epilogue', sans-serif", marginTop: 10}}>SIGN UP</h1>
+                <hr/>
+                <div class="form-group">
+                    <input value={inputPassword} type="firstName" class="form-control" id="exampleInputPassword1" placeholder="first name" onChange={e => setFirstName(e.target.value)}/>
+                </div>
+                <div class="form-group">
+                    <input value={inputPassword} type="lasName" class="form-control" id="exampleInputPassword1" placeholder="last name" onChange={e => setLastName(e.target.value)}/>
+                </div>
+                <div class="form-group">
+                    <input value={inputEmail} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email" onChange={e => setEmail(e.target.value)}/> 
+                </div>
+                <div class="form-group">
+                    <input value={inputPassword} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                </div>
+                <Button color="danger" style={{ marginBottom: 10 }}>Sign Up</Button>
             </form>
 
-            
-        </div>
-        
+                        {/* <form onSubmit={handleSubmit} style={{ border: '2px solid #ccc', borderRadius: '5px', width: '50%', align: 'center', marginLeft: '25%', marginRight: '25%', backgroundColor: "#DCDCDC" }}>
+                            <h1 style={{ fontFamily: "'Epilogue', sans-serif", marginTop: 10 }}>SIGN UP</h1>
+                            <hr />
+                            <input value={firstName} placeholder="first name" onChange={e => setFirstName(e.target.value)} />
+                            <br></br>
+                            <input value={lastName} placeholder="last name" onChange={e => setLastName(e.target.value)} style={{ marginTop: 10 }} />
+                            <br></br>
+                            <input value={email} placeholder="email" onChange={e => setEmail(e.target.value)} style={{ marginTop: 10 }} />
+                            <br></br>
+                            <input value={password} placeholder="password" onChange={e => setPassword(e.target.value)} style={{ margin: 10 }} />
+                            <br></br>
+                            <Button color="danger" style={{ marginBottom: 10 }}>Sign Up</Button>
+                        </form> */}
+
+                    </div>
+
     )
 }
 
 export const handleLogoutUser = (e) => {
-    e.preventDefault()
+                        e.preventDefault()
     console.log("loggingout")
     axios.get("/api/users/logout", {
-      
-    })
+
+                    })
 
         .then(function (res) {
-            console.log(res)
+                        console.log(res)
             // setLoggedIn(false)
             window.location.href = "/"
             

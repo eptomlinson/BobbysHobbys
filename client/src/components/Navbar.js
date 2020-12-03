@@ -29,8 +29,8 @@ function handleFormSubmit(event, image) {
     })
       .catch(err => console.log(err));
 
-    alert("Your post has been posted!");
-    window.location.reload();
+    // alert("Your post has been posted!");
+    // window.location.reload();
   
 };
 

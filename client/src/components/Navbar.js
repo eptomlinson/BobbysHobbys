@@ -2,8 +2,13 @@ import React, {useState}from "react";
 import PostModal from "./MakeAPost";
 import API from "../utils/API";
 import {handleLogoutUser} from "../components/Login/Login"
+import transparentBobby from "./transparentbobby.PNG"
+import transparentOrange from "./transparentorange.PNG"
 
 function Navbar(props) {
+const styles = {backgroundColor: "#403F4C"}
+const buttonStyle = {backgroundColor: "#D9D4D5"}
+
 const [formObject, setFormObject] = useState({})
 
 function handleInputChange(event) {
@@ -42,27 +47,27 @@ function handleClick(event){
 return (
 <div className="pos-f-t">
   <div className="collapse" id="navbarToggleExternalContent">
-    <div className="bg-dark p-4">
+    <div style={styles} className="p-4">
       <h4 className="text-white">Bobby's Hobbies</h4>
       <span className="text-muted">Your Leisure Liaison</span>
       <a className="nav-item nav-link active" href="/home">Home <span className="sr-only">(current)</span></a>
       <a className="nav-item nav-link" href="/">Login</a>
-      <a className="nav-item nav-link" href="#">About</a>
-      <a className="nav-item nav-link" href="#">Contact Us</a>
-      <a className="nav-item nav-link" href="#">Logout</a>
     </div>
   </div>
-  <nav className="navbar navbar-dark bg-dark">
+  <nav style={styles} className="navbar">
   <button onClick={handleClick} type="button" class="btn btn-outline-primary">Logout</button>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+    <button style={buttonStyle} align="center" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+    <img style={{ alignSelf: 'center' }} style={{height:50}} src={transparentOrange}></img>
+      <span className="navbar-toggler-icon"><div style={{fontSize:20}}>Navbar</div></span>
     </button>
     <div className="row">
     <a href="/favorites"><button style={{color:"red", size: 10}} className="btn">Favorites</button></a>
     <PostModal onChange={handleInputChange} submitPost={handleFormSubmit} />
     </div>
   </nav>
-  <h1 style={{fontFamily: "Monaco", fontSize: "100px"}}>BOBBY'S HOBBIES</h1>
+
+  <img style={{height:400}} src={transparentBobby}></img>
+
 </div>
 )
 }

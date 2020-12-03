@@ -18,6 +18,13 @@ function App() {
             <Jumbotron />
             <Portfolio />
           </Route>
+
+          <Route exact path="/favorites">
+            <Navbar />
+            
+          </Route>
+
+
         </Switch>
       </div>
     </Router>

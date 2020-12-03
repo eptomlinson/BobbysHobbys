@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const { Hobby } = require('.');
 const Schema = mongoose.Schema;
 // define the User model schema
 const UserSchema = new Schema({
@@ -24,6 +25,8 @@ const UserSchema = new Schema({
         required: true,
         trim: true
     },
+
+    favoriteHobbies: [{type: Schema.Types.ObjectId, ref: "hobbies"}]
 
 });
 UserSchema.methods = {

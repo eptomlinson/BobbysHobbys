@@ -45,6 +45,34 @@ router.get('/info', function(req, res) {
             res.json(dbUser)
         })
     }
+});
+
+
+/**
+ * Send in body with hobby id inside, as as logged-in user: { hobby_id: 213iwonfsipfno }
+ */
+router.post('/favoriteHobby', function(req, res) {
+    console.log("connected to route");
+    let hobby_id = req.body.hobby_id;
+    console.log(hobby_id);
+    db.User.findOne(
+		{ _id: req.user._id }
+    )
+    .then(user => {
+        console.log(user);
+        db.Hobby
+          .findById(hobby_id)
+          .then(hobby => {
+            console.log("found the hobby")
+            user.favoriteHobbies.push(hobby);
+            user.save(function(err, user) {
+                if (err) return console.error(err);
+                res.json({user: user});
+                console.log("User saved succussfully!");
+              });
+            })
+          .catch(err => res.status(422).json(err));
+    });
 })
 
 module.exports = router;

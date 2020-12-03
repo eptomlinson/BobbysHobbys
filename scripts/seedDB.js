@@ -15,7 +15,7 @@ const hobbySeed = [
     cost: "Free",
     description: "This is an art where only a pen and paper are needed.",
     category: "art",
-    date: new Date(Date.now())
+    date: new Date(Date.now()),
   },
   {
     name: "Watercolor",

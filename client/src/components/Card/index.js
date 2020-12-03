@@ -32,7 +32,7 @@ function Card(props) {
             <strong>Description:</strong> {props.description}
           </li>
        
-          < FavoriteBtn/>
+          < FavoriteBtn hobbyId={props.id} />
          
         </ul>
        

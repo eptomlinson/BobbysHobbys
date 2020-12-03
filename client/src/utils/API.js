@@ -44,6 +44,10 @@ const API = {
   saveHobby: function(hobbyData) {
     console.log(hobbyData);
     return axios.post("/api/hobbies", hobbyData);
+  },
+  saveHobbyToFavorites: function(hobbyData) {
+    console.log(hobbyData);
+    return axios.post("/api/users/favoriteHobby", hobbyData);
   }
 };
 

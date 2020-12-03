@@ -22,6 +22,13 @@ function App() {
           <Route exact path="/">
             {isLoggedIn ? <Home toggle={toggle} /> : <Login toggle = {toggle} />}
           </Route>
+
+          <Route exact path="/favorites">
+            <Navbar />
+            
+          </Route>
+
+
         </Switch>
       </div>
     </Router>

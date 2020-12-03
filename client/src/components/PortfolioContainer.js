@@ -13,7 +13,7 @@ import Music from "./pages/Music/Music"
 
 class Portfolio extends Component {
   state = {
-    currentPage: "Cooking"
+    currentPage: "Art"
   };
 
   handlePageChange = page => {

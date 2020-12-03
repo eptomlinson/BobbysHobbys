@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css"
 
 function HobbyTabs(props) {
+  
   return (
     <ul className="nav nav-tabs">
             <li className="nav-item">

@@ -1,0 +1,19 @@
+.nav-tabs{
+    /* background-color: rgb(145, 145, 145); */
+    color: white
+}
+
+.nav-link{
+    background-color: #403F4C;
+    color: white
+}
+
+.nav-link:hover{
+    background-color: #403F4C;
+    color: pink
+}
+
+.nav-link:active{
+color: orange
+
+}

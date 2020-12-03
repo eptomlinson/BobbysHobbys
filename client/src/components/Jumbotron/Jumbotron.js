@@ -1,8 +1,10 @@
 import React from "react";
 
 function Jumbotron(props) {
+    const styles = {backgroundColor: "#403F4C", color:"#fff", fontFamily: `"bitter", "serif"`}
+
 return (
-    <div className="jumbotron text-center hoverable p-4">
+    <div style={styles} className="jumbotron text-center hoverable p-4">
 
 
         <div className="row">
@@ -30,8 +32,8 @@ return (
                 <h4 className="h4 mb-4">Hobby of the Day</h4>
 
                 <p className="font-weight-normal" style={{fontSize: "25px"}}>"I took up making Sourdough bread during the pandemic and now I'm a bread making machine. I created my own simple recipe and thought it was perfect to share."</p>
-                <p className="font-weight-normal" style={{fontSize: "15px"}}>Submitted by <a><strong>Carine Fox</strong></a>, 8/24/2020</p>
-                <p className="font-weight-normal" style={{fontSize: "12px"}}>Learn all of Carine's bread-making tips.</p>
+                <p className="font-weight-normal" style={{fontSize: "15px", fontFamily: "arial"}}>Submitted by <a><strong>Carine Fox</strong></a>, 8/24/2020</p>
+                <p className="font-weight-normal" style={{fontSize: "12px",  fontFamily: "arial"}}>Learn all of Carine's bread-making tips.</p>
 
                 <a className="btn btn-success">Read more</a>
 

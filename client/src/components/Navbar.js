@@ -58,7 +58,7 @@ return (
   <button onClick={handleClick} type="button" class="btn btn-outline-primary">Logout</button>
     <button style={buttonStyle} align="center" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     <img style={{ alignSelf: 'center' }} style={{height:50}} src={transparentOrange}></img>
-      <span className="navbar-toggler-icon"><div style={{fontSize:20}}>Navbar</div></span>
+      <span className="navbar-toggler-icon"><div style={{fontSize:20}}>^</div></span>
     </button>
     <div className="row">
     <a href="/favorites"><button style={{color:"red", size: 10}} className="btn">Favorites</button></a>

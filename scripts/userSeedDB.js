@@ -10,22 +10,22 @@ mongoose.connect(
 
 const userSeed = [
   {
-    first_name: "Sandra",
-    last_name: "Smith",
-    email: "blah@gmail.com",
-    password: "This is an art where only a pen and paper are needed.",
+    first_name: "Ethan",
+    last_name: "Ellison",
+    email: "e@e.com",
+    password: "excellent",
   },
   {
     first_name: "Test",
     last_name: "Test",
-    email: "Test",
-    password: "abcds",
+    email: "test@test.com",
+    password: "testing123",
   },
 ];
 
-db.User
+db.Hobby
   .remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.Hobby.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

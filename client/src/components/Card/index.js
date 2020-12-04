@@ -5,10 +5,7 @@ import "./style.css";
 
 function Card(props) {
 
-// function favoriteHobby(id){
-//   API.saveHobbyToFavorite(id)
-
-//   //change the color of the favoriteBTN to red.
+//   function addToFavorites {
 
 // }
 
@@ -32,7 +29,7 @@ function Card(props) {
             <strong>Description:</strong> {props.description}
           </li>
        
-          < FavoriteBtn hobbyId={props.id} />
+          < FavoriteBtn hobbyId={props.id} favorited={props.favorited} />
          
         </ul>
        

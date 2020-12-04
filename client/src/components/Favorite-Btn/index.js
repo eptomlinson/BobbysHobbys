@@ -7,29 +7,26 @@ import API from "../../utils/API";
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
 function FavoriteBtn(props) {
-    const [state, setState] = useState(true);
+  const [state, setState] = useState(props.favorited|| false);
 
-    function toggle(event) {
-        API.saveHobbyToFavorites({hobby_id: props.hobbyId})
-        .then(resp => {
-          console.log(resp)
-            setState(!state);
-          
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
+  function toggle(event) {
+    API.toggleFavoriteHobby({ hobby_id: props.hobbyId })
+      .then(resp => {
+        console.log(resp)
+        setState(!state);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
-   
+
   return (
     <div onClick={toggle} className="favorite-btn" {...props} role="button" tabIndex="0">
-     {state ? <img style={{height: 60}} src={favorite}></img> : <img style={{height: 60}} src={redfavorite}></img>}
+      {state ? <img style={{ height: 60 }} src={redfavorite}></img> : <img style={{ height: 60 }} src={favorite}></img>}
     </div>
-    
+
   );
 }
-
-
 
 export default FavoriteBtn;

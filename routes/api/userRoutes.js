@@ -20,6 +20,7 @@ router.post('/signup', function(req, res) {
         last_name: req.body.last_name,
         email: req.body.email,
         password: req.body.password,
+        favoriteHobbies: [ "5fc818378e37fd7d40eb4986"]
     })
     .then(function(dbUser) {
         console.log(dbUser)
@@ -40,7 +41,9 @@ router.get('/info', function(req, res) {
             {
                 _id: req.user._id
             }
-        ).then(dbUser => {
+        )
+        .populate("favoriteHobbies")
+        .then(dbUser => {
             console.log(dbUser)
             res.json(dbUser)
         })
@@ -51,7 +54,7 @@ router.get('/info', function(req, res) {
 /**
  * Send in body with hobby id inside, as as logged-in user: { hobby_id: 213iwonfsipfno }
  */
-router.post('/favoriteHobby', function(req, res) {
+router.post('/toggleFavoriteHobby', function(req, res) {
     console.log("connected to route");
     let hobby_id = req.body.hobby_id;
     console.log(hobby_id);
@@ -63,8 +66,17 @@ router.post('/favoriteHobby', function(req, res) {
         db.Hobby
           .findById(hobby_id)
           .then(hobby => {
-            console.log("found the hobby")
-            user.favoriteHobbies.push(hobby);
+            console.log("found the hobby");
+            if (user.favoriteHobbies.find(favHobby => favHobby._id == hobby_id)) {
+                // remove the hobby from the list
+                user.favoriteHobbies = user.favoriteHobbies
+                .filter(favHobby => favHobby._id != hobby_id)
+            } else {
+                // add the hobby to the list
+                user.favoriteHobbies.push(hobby);
+            }
+
+            // save
             user.save(function(err, user) {
                 if (err) return console.error(err);
                 res.json({user: user});

@@ -22,7 +22,7 @@ const Login = (props) => {
         console.log("hello")
 
         if (password.length < 6 && password !== (/[0-9]/) && password !== (/[a-z]/)){
-            alert('Password must contain at least 6 characters long, lettters, and at least one number');
+            alert('Password must contain at least 6 characters, letters, and at least one number');
             setPassword('');
         }
         else {

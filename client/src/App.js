@@ -7,8 +7,9 @@ import Home from './components/pages/Home';
 import FavoritesPage from "./components/pages/FavoritesPage"
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {useState} from 'react';
+import { useState } from 'react';
 import Login from "./components/Login/Login"
+
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false)
 
@@ -22,15 +23,25 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-    
+
           {/* </Route> */}
           <Route exact path="/">
-            {isLoggedIn ? <Home toggle={toggle} isLoggedIn = {isLoggedIn} /> : <Login toggle = {toggle} />}
+            {isLoggedIn ? <Home toggle={toggle} isLoggedIn={isLoggedIn} /> : <Login toggle={toggle} />}
           </Route>
 
           <Route exact path="/favorites">
-            <Navbar />
-      <FavoritesPage />
+          {/* <Navbar toggle={toggle} isLoggedIn={isLoggedIn} /> */}
+          {true ? <FavoritesPage toggle={toggle} isLoggedIn={true} /> : <Login toggle={toggle} />}
+            {/* <FavoritesPage>
+
+            </FavoritesPage> */}
+
+            {/* {isLoggedIn ?
+              <>
+                <Navbar toggle={toggle} isLoggedIn={isLoggedIn} />
+                <FavoritesPage toggle={toggle} isLoggedIn={isLoggedIn} />
+              </>
+              : <Login toggle={toggle} />} */}
           </Route>
 
 

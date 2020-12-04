@@ -26,7 +26,7 @@ const UserFavorites = () => {
   
   return (
     <div>
-      <h1>Your Favorites</h1>
+      <h1 style={{color: "#fff"}}>Your Favorites</h1>
       <Wrapper>
         {favorites.map(hobby => (
           <Card

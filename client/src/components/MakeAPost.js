@@ -37,7 +37,7 @@ function PostModal(props) {
 
   return (
     <div>
-      <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">
         Make a Post!
     </button>
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

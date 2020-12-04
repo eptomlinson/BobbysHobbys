@@ -22,7 +22,7 @@ const ThrillSeeking = () => {
 
   return (
     <div>
-      <h1>Thrill Seeking</h1>
+      <h1 style={{color: "#fff"}}>Thrill Seeking</h1>
       <Wrapper>
         {thrillSeeking.map(hobby => (
           <Card

@@ -22,7 +22,7 @@ const Music = () => {
   
   return (
     <div>
-      <h1>Music</h1>
+      <h1 style={{color: "#fff"}}>Music</h1>
       <Wrapper>
         {music.map(hobby => (
           <Card

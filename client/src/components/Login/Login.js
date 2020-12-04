@@ -16,9 +16,12 @@ const Login = (props) => {
     const [inputEmail, setInputEmail] = React.useState("")
     const [user, setUser] = React.useState(null)
     
-    const [loggedIn, setLoggedIn] = React.useState()
+    const [loggedIn, setLoggedIn] = React.useState(1)
     const [errorMessage, setErrorMessage] = React.useState("")
 
+    // setLoggedIn(2)
+    // console.log(loggedIn);
+    // props.toggle(loggedIn)
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("hello")
@@ -57,9 +60,14 @@ const Login = (props) => {
             .then(function (res) {
                 console.log(res)
                 console.log("logged in user")
+                if (res){
+                    // setLoggedIn(2)
+                    // console.log(loggedIn);
+                    props.toggle(true);
+                }
                 // window.location.reload()
-                setLoggedIn(true)
-                props.toggle()
+                // setLoggedIn(true)
+
                 // window.location.href = "/home"
 
             })
@@ -70,6 +78,7 @@ const Login = (props) => {
                 console.log(error) 
                 setErrorMessage("User doesn't exist")
             })
+
     }
     React.useEffect(() => {
         axios.get("/api/users/info")

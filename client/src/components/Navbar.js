@@ -45,8 +45,17 @@ function handleFormSubmit(event, image) {
 
 function handleClick(event){
   event.preventDefault();
-  props.toggle();
-  handleLogoutUser()
+  
+  if(props.isLoggedIn){
+    props.toggle(props.isLoggedIn);
+    handleLogoutUser()
+  }
+
+}
+function componentRedirect(){
+  if(props.isLoggedIn){
+    props.toggle(props.isLoggedIn)
+  }
 }
 return (
 <div className="pos-f-t">
@@ -54,7 +63,7 @@ return (
     <div style={styles} className="p-4">
       <h4 className="text-white">Bobby's Hobbies</h4>
       <span className="text-muted">Your Leisure Liaison</span>
-      <a className="nav-item nav-link active" href="/home">Home <span className="sr-only">(current)</span></a>
+      <a className="nav-item nav-link active" onClick= {componentRedirect}>Home <span className="sr-only">(current)</span></a>
       <a className="nav-item nav-link" href="/">Login</a>
     </div>
   </div>

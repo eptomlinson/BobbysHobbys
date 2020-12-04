@@ -45,12 +45,15 @@ const API = {
     console.log(hobbyData);
     return axios.post("/api/hobbies", hobbyData);
   },
-  saveHobbyToFavorites: function(hobbyData) {
+  toggleFavoriteHobby: function(hobbyData) {
     console.log(hobbyData);
-    return axios.post("/api/users/favoriteHobby", hobbyData);
+    return axios.post("/api/users/toggleFavoriteHobby", hobbyData);
   },
-  getFavoriteHobbies: function(hobbyData) {
-    return axios.get("/api/users/favoriteHobby", hobbyData)
+  getFavoriteHobbies: function() {
+    return axios.get("/api/users/favoriteHobby")
+  },
+  getUser: function() {
+    return axios.get("/api/users/info");
   }
 };
 

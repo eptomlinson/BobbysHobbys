@@ -14,11 +14,12 @@ const UserFavorites = () => {
   },[])
 
   function loadFavorites() {
-    API.getFavoriteHobbies()
-      .then(res => 
-        setFavorites(res.data)
+    API.getUser()
+      .then(res => {
+        console.log(res);
+        setFavorites(res.data.favoriteHobbies);
         // this will probably not be res.data...
-      )
+      })
       .catch(err => console.log(err));
         console.log(favorites)
   };
@@ -35,6 +36,7 @@ const UserFavorites = () => {
             image={hobby.image}
             cost={hobby.cost}
             description={hobby.description}
+            favorited={true}
           />
         ))}
 

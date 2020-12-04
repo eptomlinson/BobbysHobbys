@@ -45,6 +45,8 @@ UserSchema.pre("save", function(next) {
   } else {
     console.log("models/user.js hashPassword in pre save");
     this.password = this.hashPassword(this.password);
+    console.log("creating hashed password");
+    console.log(this.password) // $2b$10$6xeAQVS1xKouK9cpKg8Fz.2A2Z16v8DdXK0KCA1lItikIRF/cmQRe
     next();
   }
 });

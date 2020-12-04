@@ -4,10 +4,14 @@ import API from "../utils/API";
 import {handleLogoutUser} from "../components/Login/Login"
 import transparentBobby from "./transparentbobby.PNG"
 import transparentOrange from "./transparentorange.PNG"
+import whiteorangetransparent from "./whiteorangetransparent.PNG"
+import bobbyround from "./bobbyround.PNG"
+
 
 function Navbar(props) {
-const styles = {backgroundColor: "#403F4C"}
-const buttonStyle = {backgroundColor: "#D9D4D5"}
+const styles = {backgroundColor: "#141414", boxShadow:" 0px 0px 10px 0px #000"}
+const buttonStyle = {backgroundColor: "#141414"}
+
 
 const [formObject, setFormObject] = useState({})
 
@@ -55,18 +59,18 @@ return (
     </div>
   </div>
   <nav style={styles} className="navbar">
-  <button onClick={handleClick} type="button" class="btn btn-outline-primary">Logout</button>
     <button style={buttonStyle} align="center" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-    <img style={{ alignSelf: 'center' }} style={{height:50}} src={transparentOrange}></img>
+    <img style={{ alignSelf: 'center' }} style={{height:50}} src={whiteorangetransparent}></img>
       <span className="navbar-toggler-icon"><div style={{fontSize:20}}>^</div></span>
     </button>
     <div className="row">
     <a href="/favorites"><button style={{color:"red", size: 10}} className="btn">Favorites</button></a>
     <PostModal onChange={handleInputChange} submitPost={handleFormSubmit} />
+    <button onClick={handleClick} type="button" class="btn btn-outline-light btn-space" >Logout</button>
     </div>
   </nav>
 
-  <img style={{height:400}} src={transparentBobby}></img>
+  <img style={{height:400}} src={bobbyround}></img>
 
 </div>
 )

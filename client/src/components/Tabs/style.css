@@ -4,16 +4,16 @@
 }
 
 .nav-link{
-    background-color: #403F4C;
+    background-color: #BF3A0D;
     color: white
 }
 
 .nav-link:hover{
-    background-color: #403F4C;
-    color: pink
+    background-color: #E8BD21;
+    color: #fff;
 }
 
 .nav-link:active{
-color: orange
+color: #000;
 
 }

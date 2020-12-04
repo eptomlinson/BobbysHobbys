@@ -20,7 +20,7 @@ const Outdoors = () => {
   
   return (
     <div>
-      <h1>Outdoors</h1>
+      <h1 style={{color: "#fff"}}>Outdoors</h1>
       <Wrapper>
         {outdoors.map(hobby => (
           <Card

@@ -24,7 +24,7 @@ const Games = () => {
 
   return (
     <div>
-      <h1>Games</h1>
+      <h1 style={{color: "#fff"}}>Games</h1>
       <Wrapper>
         {games.map(hobby => (
           <Card

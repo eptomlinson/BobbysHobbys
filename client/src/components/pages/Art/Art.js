@@ -22,7 +22,7 @@ const Art = () => {
 
   return (
     <div>
-      <h1>Art</h1>
+      <h1 style={{color: "#fff"}}>Art </h1>
       <Wrapper>
         {art.map(hobby => (
           <Card

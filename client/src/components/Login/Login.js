@@ -2,6 +2,8 @@ import React, { useState, useEffect, Alert } from 'react';
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import "./style.css";
+import transparentBobby from "./transparentbobby.PNG"
+
 
 var passport = require("passport")
 const Login = (props) => {
@@ -85,16 +87,17 @@ const Login = (props) => {
     }
     return (
         <div>
-            {(user) &&
+            {/* {(user) &&
                 <p>Welcome {user.first_name}!!</p>
-            }
+            } */}
 
 <section className="container-fluid">
             <section className="row">
                 <section className="col-12 col-sm-6 col-md-3">
                     <div className="form-container">
+                        <img style={{height:100}} src={transparentBobby}></img>
                         {(user) &&
-                            <p>Welcome {user.first_name}!!</p>
+                            <p>Welcome {user.first_name + " " + user.last_name}!</p>
                         }
                         <form className="form-group" onSubmit={handleSubmit}>
                             <label for="exampleInputName">Sign Up</label>
@@ -108,7 +111,7 @@ const Login = (props) => {
                                 <input value={email} placeholder="Email" onChange={e => setEmail(e.target.value)} class="form-control" id="exampleemail" ></input>
                             </div>
                             <div class="form-group">
-                                <input value={password} placeholder="Password" onChange={e => setPassword(e.target.value)} class="form-control" id="examplepassword" ></input>
+                                <input value={password} type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} class="form-control" id="examplepassword" ></input>
                             </div>
                             <button type="submit" class="btn btn-dark btn-block">Sign Up</button>
                         </form>
@@ -119,7 +122,7 @@ const Login = (props) => {
                                 <input value={inputEmail} placeholder="Email" onChange={e => setInputEmail(e.target.value)} class="form-control" aria-describedby="emailHelp" ></input>
                             </div>
                             <div class="form-group">
-                                <input value={inputPassword} placeholder="Password" onChange={e => setInputPassword(e.target.value)} class="form-control" id="examplepassword" aria-describedby="emailHelp"></input>
+                                <input value={inputPassword} type="password" placeholder="Password" onChange={e => setInputPassword(e.target.value)} class="form-control" id="examplepassword" aria-describedby="emailHelp"></input>
                             </div>
                             <button type="submit" class="btn btn-dark btn-block">Login</button>
                             <br></br>

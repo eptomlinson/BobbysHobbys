@@ -51,7 +51,7 @@ const hobbySeed = [
   },
   {
     name: "Sous Vide",
-    image: "https://bgr.com/wp-content/uploads/2017/11/anova-sous-vide.jpg?resize=782,579",
+    image: "https://www.sana-store.com/admin/upload/images-cache/21258/540x540.webp",
     cost: "$90",
     description: "Once limited to professional kitchens, sous vide (pronounced sue-veed) is a cooking technique that utilizes precise temperature control to deliver consistent, restaurant-quality results. You'll need a precision cooker, which well set you back, as well as some ziplock bags.",
     category: "cooking",
@@ -61,7 +61,7 @@ const hobbySeed = [
     name: "Computer Gaming",
     image: "https://cdn.cnn.com/cnnnext/dam/assets/200630134005-build-two-1-super-169.jpeg",
     cost: "Free-$60",
-    description: "If you're viewing this page, you already have the main item you'll need, so this cost does not include the cost of a computer. There are many free games available on steam. New AAA titles usually sell for $60. Steam has new free games offered weekly.",
+    description: "If you're viewing this page, you already have the main item you'll need, so this cost does not include the cost of a computer. There are many free games available. New AAA titles usually sell for $60. Steam has new free games offered weekly.",
     category: "entertainment",
     date: new Date(Date.now())
   },
@@ -69,7 +69,7 @@ const hobbySeed = [
     name: "Current Gen Console Gaming",
     image: "https://cdn.cnn.com/cnnnext/dam/assets/201101103446-03-xbox-v-ps5-exlarge-169.jpg",
     cost: "$459",
-    description: "A more expensive way to game, but if you are a die hard console gamer, you'll need the latest hardware to play the latest games. Some of the most anticipated exclusive titles will not make their way to computer gaming for years. Helps develop hand-eye coordination.",
+    description: "A more expensive way to game, but if you are a die hard console gamer, you'll need the latest hardware to play the latest games. Some of the most anticipated exclusive titles will not make their way to Mac/PC for years. Helps develop hand-eye coordination.",
     category: "entertainment",
     date: new Date(Date.now())
   },
@@ -93,7 +93,7 @@ const hobbySeed = [
     name: "Biking",
     image: "https://www.vermontvacation.com/~/media/images/things%20to%20do/recreation/boarderlands-mountain-biking.ashx?h=400&la=en&w=600",
     cost: "$500",
-    description: "It's like riding a bike, because it is riding a bike! You could always get a cheapo bike from Walmart, but if you want something that will last, you probably need to shell out at least $500. Great way to build endurance and leg muscles. Watch out for the cars, they certainly won't be watching out for you.",
+    description: "It's like riding a bike, because it is riding a bike! You could get a cheapo bike from Walmart, but if you want a nice one, it will cost at least $500. Builds endurance and leg muscles. Watch out for cars, they certainly won't watch out for you.",
     category: "exercise",
     date: new Date(Date.now())
   },
@@ -101,7 +101,7 @@ const hobbySeed = [
     name: "Weight Lifting",
     image: "https://i.imgur.com/H8Ua5bB.jpeg",
     cost: "$70",
-    description: "Hulk SMASH! Not recommended for those with heart conditions or back problems. Start with lighter weights and work your way up. You don't necessarily have to spend any money, you could just lift heavy stuff around the house, but it is admittedly harder to track progress that way.",
+    description: "Hulk SMASH! Not recommended for those with heart conditions or back problems. Start with lighter weights and work your way up.",
     category: "exercise",
     date: new Date(Date.now())
   },
@@ -131,9 +131,9 @@ const hobbySeed = [
   },
   {
     name: "Replace Toilet",
-    image: "https://s3-production.bobvila.com/articles/wp-content/uploads/2018/07/draining-toilet.jpg",
+    image: "https://i.guim.co.uk/img/media/6babd768431f1b18e3daaabc3ff8c2e258dd67f5/1053_1195_4826_2896/master/4826.jpg?width=620&quality=85&auto=format&fit=max&s=be68c46d0d65f1fa22c7784592188ddc",
     cost: "$130",
-    description: "It is easier to do than it looks. Shut off the water, close the line to the toilet, remove the old toilet, and put the new one in, making sure to use the wax O-ring so that it is flat against the floor. You can shunt it if it won't stay flat. Oh, and you should have someone helping you, so you'll need to buy them pizza/beer afterwards.",
+    description: "Easier than it looks; shut off the water, close the line to the toilet, remove the old toilet, and put the new one in, and use the wax O-ring so that it sets against the floor. Use a shunt if it won't stay flat. It's a 2 person job; toilets are heavy!",
     category: "homeimprovement",
     date: new Date(Date.now())
   },
@@ -147,9 +147,9 @@ const hobbySeed = [
   },
   {
     name: "Install Water Filter",
-    image: "https://cdn.vox-cdn.com/thumbor/PAwwLO8roHuBe-KJvb_91gZQUEU=/0x0:400x400/1120x0/filters:focal(0x0:400x400):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19509180/10_diy_savings.jpg",
+    image: "https://homelivingstyle.com/wp-content/uploads/2019/11/Screenshot_1-6.png",
     cost: "$250",
-    description: "Shut off the water, open faucet to release remaining water, connect adapter, push tubing through attaching it from the filter to the adapter, attach adapter to shut off valve, run sink. Done.",
+    description: "Shut off the water, open faucet to release remaining water, connect adapter, push tubing through attaching it from the filter to the adapter, attach adapter to shut off valve, run sink.",
     category: "homeimprovement",
     date: new Date(Date.now())
   },
@@ -171,7 +171,7 @@ const hobbySeed = [
   },
   {
     name: "Drum Kit",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Pete_Sandoval_practising_the_drums.jpg/330px-Pete_Sandoval_practising_the_drums.jpg",
+    image: "https://i.pinimg.com/564x/5f/3b/ff/5f3bff9140439957d1f1783cd5835a9a.jpg",
     cost: "$350",
     description: "Probably not the best instrument for apartment dwellers. The basics are rather simple, but it is physically demanding at high tempos, and odd time signatures can take time to get used to.",
     category: "music",
@@ -181,7 +181,7 @@ const hobbySeed = [
     name: "Golf",
     image: "https://www.ocregister.com/wp-content/uploads/2019/04/GettyImages-1142670334-1.jpg?w=1080",
     cost: "$40",
-    description: "A new set of clubs will cost ya, but you can easily get a used set at a garage sale that serve your purposes as a novice. There are public courses and driving ranges that don't require memberships, but you will need to pay to play ($5-20 per outing most likely). You may develop calluses if you play enough.",
+    description: "New clubs are costly, but you can just get a used set as a novice. There are public courses and driving ranges that don't require memberships, but you will need to pay $5-20 per outing most likely. You may develop calluses if you play enough.",
     category: "outdoors",
     date: new Date(Date.now())
   },
@@ -189,7 +189,7 @@ const hobbySeed = [
     name: "Skiing",
     image: "https://img.vavel.com/sunny-1103-7438263571.jpg",
     cost: "$150",
-    description: "Most slopes allow you to rent gear, so you don't necessarily need to buy your own (in that case, add $400+ to the cost). You'll still need a lift ticket either way. It's all about balance and endurance. Oh, and knowing how to stop; that's the most important part.",
+    description: "Most slopes rent gear, so you don't need to buy your own (in that case, add $400+ to the cost). You'll still need a lift ticket either way. It's all about balance and endurance. Oh, and knowing how to stop; that's the most important part.",
     category: "outdoors",
     date: new Date(Date.now())
   },
@@ -213,7 +213,7 @@ const hobbySeed = [
     name: "Sky Diving",
     image: "https://wnyskydiving.com/wp-content/uploads/2019/01/skydiving-experience-kaila-proulx-tandem.jpeg",
     cost: "$99",
-    description: "See you at the bottom! The most important requirement is that you have nerves of steel (you will be jumping out of an airplane at about 10,000 feet up). You will receive training wherever you go, and most places make first timers jump with a guide attached to them who will make sure the chute is packed right.",
+    description: "See you at the bottom! You'll need nerves of steel (you will be jumping out of a plane at about 10,000 feet). You will receive training wherever you go; first timers jump with a guide attached to them who will make sure the chute is packed right.",
     category: "thrillseeking",
     date: new Date(Date.now())
   },

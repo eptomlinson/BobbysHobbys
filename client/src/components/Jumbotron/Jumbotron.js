@@ -24,10 +24,10 @@ return (
             <div className="col-md-7 text-md-left ml-3 mt-3">
 
 
-                <a href="#!" className="green-text">
+                {/* <a href="#!" className="green-text"> */}
                     {/* if we have time we could get it to link to the right section depending on the Hobby of the Day */}
-                    <h6 className="h6 pb-1"><i className="fas fa-desktop pr-1"></i> Baking </h6>
-                </a>
+                    {/* <h6 className="h6 pb-1"><i className="fas fa-desktop pr-1"></i> Baking </h6> */}
+                {/* </a> */}
 
                 <h4 className="h4 mb-4">Hobby of the Day</h4>
 
@@ -35,7 +35,7 @@ return (
                 <p className="font-weight-normal" style={{fontSize: "15px", fontFamily: "arial"}}>Submitted by <a><strong>Carine Fox</strong></a>, 8/24/2020</p>
                 <p className="font-weight-normal" style={{fontSize: "12px",  fontFamily: "arial"}}>Learn all of Carine's bread-making tips.</p>
 
-                <a className="btn btn-success">Read more</a>
+                {/* <a className="btn btn-success">Read more</a> */}
 
             </div>
 

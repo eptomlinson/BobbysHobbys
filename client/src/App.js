@@ -13,9 +13,11 @@ function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false)
 
 
-  const toggle = () => {
-    setisLoggedIn(!isLoggedIn);
+  const toggle = (loginInfo) => {
+    console.log(loginInfo);
+    setisLoggedIn(loginInfo);
   }
+  console.log(isLoggedIn);
   return (
     <Router>
       <div className="App">
@@ -23,7 +25,7 @@ function App() {
     
           {/* </Route> */}
           <Route exact path="/">
-            {isLoggedIn ? <Home toggle={toggle} /> : <Login toggle = {toggle} />}
+            {isLoggedIn ? <Home toggle={toggle} isLoggedIn = {isLoggedIn} /> : <Login toggle = {toggle} />}
           </Route>
 
           <Route exact path="/favorites">

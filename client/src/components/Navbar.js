@@ -52,10 +52,12 @@ function handleClick(event){
   }
 
 }
-function componentRedirect(){
+function componentRedirect(e){
+  e.preventDefault();
   if(props.isLoggedIn){
-    props.toggle(props.isLoggedIn)
+    props.toggle(true)
   }
+  window.location.href="/"
 }
 return (
 <div className="pos-f-t">
@@ -63,7 +65,7 @@ return (
     <div style={styles} className="p-4">
       <h4 className="text-white">Bobby's Hobbies</h4>
       <span className="text-muted">Your Leisure Liaison</span>
-      <a className="nav-item nav-link active" onClick= {componentRedirect}>Home <span className="sr-only">(current)</span></a>
+      <button className="nav-item nav-link active" onClick= {componentRedirect}>Home <span className="sr-only">(current)</span></button>
       <a className="nav-item nav-link" href="/">Login</a>
     </div>
   </div>
@@ -73,7 +75,7 @@ return (
       <span className="navbar-toggler-icon"><div style={{fontSize:20}}>^</div></span>
     </button>
     <div className="row">
-    <a href="/favorites"><button style={{color:"red", size: 10}} className="btn">Favorites</button></a>
+    <a href="/favorites"><button style={{color:"red", size: 10}} className="btn" >Favorites</button></a>
     <PostModal onChange={handleInputChange} submitPost={handleFormSubmit} />
     <button onClick={handleClick} type="button" class="btn btn-outline-light btn-space" >Logout</button>
     </div>

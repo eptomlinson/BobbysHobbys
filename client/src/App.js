@@ -9,6 +9,7 @@ import FavoritesPage from "./components/pages/FavoritesPage"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {useState} from 'react';
 import Login from "./components/Login/Login"
+
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false)
 

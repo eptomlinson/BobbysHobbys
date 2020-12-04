@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Alert } from 'react';
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import "./style.css";
+
 var passport = require("passport")
 const Login = (props) => {
+
     const [firstName, setFirstName] = React.useState("")
     const [lastName, setLastName] = React.useState("")
     const [email, setEmail] = React.useState("")
@@ -18,6 +20,13 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("hello")
+
+        if (password.length < 6 && password !== (/[0-9]/) && password !== (/[a-z]/)){
+            alert('Password must contain at least 6 characters long, lettters, and at least one number');
+            setPassword('');
+        }
+        else {
+            console.log("about to make axios call")
         axios.post("/api/users/signup", {
             first_name: firstName,
             last_name: lastName,
@@ -25,9 +34,17 @@ const Login = (props) => {
             password: password,
         })
             .then(function (res) {
-                console.log(res)
+                console.log(res);
+                alert("You're all signed up!");
+                setFirstName('');
+                setLastName('');
+                setPassword('');
+                setEmail('');
             })
+        }
     }
+
+
     const handleLoginUser = (e) => {
         e.preventDefault()
         console.log("something");
@@ -71,6 +88,7 @@ const Login = (props) => {
             {(user) &&
                 <p>Welcome {user.first_name}!!</p>
             }
+
             <form onSubmit={handleSubmit}>
                 <input value={firstName} placeholder="first name" onChange={e => setFirstName(e.target.value)} />
                 <br></br>
@@ -80,7 +98,7 @@ const Login = (props) => {
                 <br></br>
                 <input value={password} placeholder="password" onChange={e => setPassword(e.target.value)} />
                 <br></br>
-                <button>sign up</button>
+                <button type="submit">sign up</button>
             </form>
             <br></br>
             <form onSubmit={handleLoginUser}>

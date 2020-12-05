@@ -33,7 +33,7 @@ console.log(props.isLoggedIn);
 
   return (
     <>
-    <Navbar toggle={props.toggle} isLoggedIn={true} />
+    <Navbar />
     <div>
       <h1 style={{color: "#fff"}}>Your Favorites</h1>
       <Wrapper>

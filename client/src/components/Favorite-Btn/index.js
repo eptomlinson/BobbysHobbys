@@ -10,11 +10,12 @@ function FavoriteBtn(props) {
   const [state, setState] = useState(props.favorited|| false);
 
   function toggle(event) {
-    API.toggleFavoriteHobby({ hobby_id: props.hobbyId })
+    API.toggleFavoriteHobby({ hobby_id: props.hobbyid })
       .then(resp => {
         console.log(resp)
         setState(!state);
       })
+      .then(() => {alert("Hobby has been saved.")})
       .catch(error => {
         console.log(error);
       });
@@ -23,7 +24,7 @@ function FavoriteBtn(props) {
 
   return (
     <div onClick={toggle} className="favorite-btn" {...props} role="button" tabIndex="0">
-      {state ? <img style={{ height: 60 }} src={redfavorite}></img> : <img style={{ height: 60 }} src={favorite}></img>}
+      {state ? <img style={{ height: 60 }} src={redfavorite} alt="hobby"></img> : <img style={{ height: 60 }} src={favorite} alt="hobby2"></img>}
     </div>
 
   );

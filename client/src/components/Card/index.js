@@ -29,7 +29,7 @@ function Card(props) {
             <strong>Description:</strong> {props.description}
           </li>
        
-          < FavoriteBtn hobbyId={props.id} favorited={props.favorited} />
+          < FavoriteBtn hobbyid={props.id} favorited={props.favorited} />
          
         </ul>
        

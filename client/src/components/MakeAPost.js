@@ -5,6 +5,9 @@ import categories from "./Modal/categories";
 
 function PostModal(props) {
 
+
+
+
   const [imgUrl, setImage] = useState('')
   const [loading, setLoading] = useState(false)
   
@@ -19,6 +22,7 @@ function PostModal(props) {
     setLoading(true)
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/dmoc5klfw/image/upload',
+
       {
         method: 'POST',
         body: data
@@ -37,7 +41,7 @@ function PostModal(props) {
 
   return (
     <div>
-      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" style={{marginRight: 5}}>
         Make a Post!
     </button>
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,10 +54,10 @@ function PostModal(props) {
               </button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={(e) => {props.submitPost(e, imgUrl) }}>
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Name</label>
-                  <input onChange={props.onChange} name="name" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of your hobby" />
+                  <input onChange={props.onChange} name="name" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of your hobby" />
                 </div>
                 <div className="form-group">
                   <p>Upload Image</p>
@@ -86,7 +90,7 @@ function PostModal(props) {
                     ))}
                   </select>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={(e) => {props.submitPost(e, imgUrl) }}>Post!</button>
+                <button type="submit" className="btn btn-primary">Post!</button>
               </form>
             </div>
             <div className="modal-footer">

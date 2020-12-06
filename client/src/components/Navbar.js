@@ -1,16 +1,19 @@
 import React, {useState}from "react";
+import {Link} from "react-router-dom"
 import PostModal from "./MakeAPost";
 import API from "../utils/API";
-import {handleLogoutUser} from "../components/Login/Login"
-import transparentBobby from "./transparentbobby.PNG"
-import transparentOrange from "./transparentorange.PNG"
+// import {handleLogoutUser} from "../components/Login/Login"
+// import transparentBobby from "./transparentbobby.PNG"
+// import transparentOrange from "./transparentorange.PNG"
 import whiteorangetransparent from "./whiteorangetransparent.PNG"
 import bobbyround from "./bobbyround.PNG"
 
 
 function Navbar(props) {
+
 const styles = {backgroundColor: "#141414", boxShadow:" 0px 0px 10px 0px #000"}
 const buttonStyle = {backgroundColor: "#141414"}
+
 
 
 const [formObject, setFormObject] = useState({})
@@ -24,10 +27,10 @@ function handleInputChange(event) {
 
 
 
-function handleFormSubmit(event, image) {
-  event.preventDefault();
+function handleFormSubmit(e, image) {
+  e.preventDefault();
   console.log(formObject, image);
-
+  
 
     API.saveHobby({
       name: formObject.name,
@@ -35,53 +38,54 @@ function handleFormSubmit(event, image) {
       cost: formObject.cost,
       description: formObject.description,
       category: formObject.category
+    }).then(() => {
+      alert("Your post has been saved")
+      e.target.reset();
     })
       .catch(err => console.log(err));
-
-    // alert("Your post has been posted!");
-    // window.location.reload();
-  
+   
 };
 
 function handleClick(event){
   event.preventDefault();
   
-  if(props.isLoggedIn){
-    props.toggle(props.isLoggedIn);
-    handleLogoutUser()
-  }
+  window.location="/"
 
 }
-function componentRedirect(e){
-  e.preventDefault();
-  if(props.isLoggedIn){
-    props.toggle(true)
-  }
-  window.location.href="/"
-}
+// function componentRedirect(e){
+//   e.preventDefault();
+//   if(props.isLoggedIn){
+//     props.toggle(true)
+//   }
+//   window.location.href="/"
+// }
 return (
 <div className="pos-f-t">
   <div className="collapse" id="navbarToggleExternalContent">
     <div style={styles} className="p-4">
       <h4 className="text-white">Bobby's Hobbies</h4>
       <span className="text-muted">Your Leisure Liaison</span>
-      <button className="nav-item nav-link active" onClick= {componentRedirect}>Home <span className="sr-only">(current)</span></button>
-      <a className="nav-item nav-link" href="/">Login</a>
+      <Link to="/home">
+      <button className="nav-item nav-link active" style={{width: '70%', marginLeft: '15%', marginRight: '15%', marginTop: '5%'}}>Home <span className="sr-only">(current)</span></button>
+      </Link>
     </div>
   </div>
   <nav style={styles} className="navbar">
     <button style={buttonStyle} align="center" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-    <img style={{ alignSelf: 'center' }} style={{height:50}} src={whiteorangetransparent}></img>
+    <img style={{ alignSelf: 'center', height:50 }} src={whiteorangetransparent} alt="bobbyorange"></img>
       <span className="navbar-toggler-icon"><div style={{fontSize:20}}>^</div></span>
     </button>
     <div className="row">
-    <a href="/favorites"><button style={{color:"red", size: 10}} className="btn" >Favorites</button></a>
+    <Link to="/favorites"><button style={{color:"red", size: 20, marginRight: 5, border: "1px solid red"}} className="btn" >Favorites</button></Link>
     <PostModal onChange={handleInputChange} submitPost={handleFormSubmit} />
-    <button onClick={handleClick} type="button" class="btn btn-outline-light btn-space" >Logout</button>
+
+    <Link to="/">
+    <button onClick={handleClick} type="button" className="btn btn-outline-light btn-space" style={{marginRight: 5}}>Logout</button>
+    </Link>
     </div>
   </nav>
 
-  <img style={{height:400}} src={bobbyround}></img>
+  <img style={{height:400}} src={bobbyround} alt="bobby round"></img>
 
 </div>
 )

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Alert } from 'react';
+import React from 'react';
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import "./style.css";
 import transparentBobby from "./transparentbobby.PNG"
 
 
-var passport = require("passport")
+// var passport = require("passport")
 const Login = (props) => {
 
     const [firstName, setFirstName] = React.useState("")
@@ -16,7 +16,7 @@ const Login = (props) => {
     const [inputEmail, setInputEmail] = React.useState("")
     const [user, setUser] = React.useState(null)
     
-    const [loggedIn, setLoggedIn] = React.useState(1)
+    // const [loggedIn, setLoggedIn] = React.useState(1)
     const [errorMessage, setErrorMessage] = React.useState("")
 
     // setLoggedIn(2)
@@ -29,6 +29,7 @@ const Login = (props) => {
         if (password.length < 6 && password !== (/[0-9]/) && password !== (/[a-z]/)){
             alert('Password must contain at least 6 characters, letters, and at least one number');
             setPassword('');
+           
         }
         else {
             console.log("about to make axios call")
@@ -64,6 +65,7 @@ const Login = (props) => {
                     // setLoggedIn(2)
                     // console.log(loggedIn);
                     props.toggle(true);
+                    // Redirect("/home")
                 }
                 // window.location.reload()
                 // setLoggedIn(true)
@@ -87,13 +89,13 @@ const Login = (props) => {
                 setUser(res.data)
             })
     }, [])
-    function Login() {
-        passport.authenticate('local', {
-            successRedirect: '/home',
-            failureRedirect: '/',
-            failureFlash: true
-        })
-    }
+    // function Login() {
+    //     passport.authenticate('local', {
+    //         successRedirect: '/home',
+    //         failureRedirect: '/',
+    //         failureFlash: true
+    //     })
+    // }
     return (
         <div>
             {/* {(user) &&
@@ -104,36 +106,36 @@ const Login = (props) => {
             <section className="row">
                 <section className="col-12 col-sm-6 col-md-3">
                     <div className="form-container">
-                        <img style={{height:100}} src={transparentBobby}></img>
+                        <img style={{height:100}} src={transparentBobby} alt="bobby"></img>
                         {(user) &&
                             <p>Welcome {user.first_name + " " + user.last_name}!</p>
                         }
                         <form className="form-group" onSubmit={handleSubmit}>
                             <label for="exampleInputName">Sign Up</label>
-                            <div class="form-group">
-                                <input value={firstName} placeholder="First Name" onChange={e => setFirstName(e.target.value)} class="form-control" id="firstname" ></input>
+                            <div className="form-group">
+                                <input value={firstName} placeholder="First Name" onChange={e => setFirstName(e.target.value)} className="form-control" id="firstname" ></input>
                             </div>
-                            <div class="form-group">
-                                <input value={lastName} placeholder="Last Name" onChange={e => setLastName(e.target.value)} class="form-control" id="lastname"></input>
+                            <div className="form-group">
+                                <input value={lastName} placeholder="Last Name" onChange={e => setLastName(e.target.value)} className="form-control" id="lastname"></input>
                             </div>
-                            <div class="form-group">
-                                <input value={email} placeholder="Email" onChange={e => setEmail(e.target.value)} class="form-control" id="exampleemail" ></input>
+                            <div className="form-group">
+                                <input value={email} placeholder="Email" onChange={e => setEmail(e.target.value)} className="form-control" id="exampleemail" ></input>
                             </div>
-                            <div class="form-group">
-                                <input value={password} type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} class="form-control" id="examplepassword" ></input>
+                            <div className="form-group">
+                                <input value={password} type="current-password" placeholder="Password" onChange={e => setPassword(e.target.value)} className="form-control" id="signUpPass" ></input>
                             </div>
-                            <button type="submit" class="btn btn-dark btn-block">Sign Up</button>
+                            <button type="submit" className="btn btn-dark btn-block">Sign Up</button>
                         </form>
 
                         <form onSubmit={handleLoginUser}>
                             <label for="exampleInputEmail1">Already a user? Login</label>
-                            <div class="form-group">
-                                <input value={inputEmail} placeholder="Email" onChange={e => setInputEmail(e.target.value)} class="form-control" aria-describedby="emailHelp" ></input>
+                            <div className="form-group">
+                                <input value={inputEmail} placeholder="Email" onChange={e => setInputEmail(e.target.value)} className="form-control" aria-describedby="emailHelp" ></input>
                             </div>
-                            <div class="form-group">
-                                <input value={inputPassword} type="password" placeholder="Password" onChange={e => setInputPassword(e.target.value)} class="form-control" id="examplepassword" aria-describedby="emailHelp"></input>
+                            <div className="form-group">
+                                <input value={inputPassword} type="password" placeholder="Password" onChange={e => setInputPassword(e.target.value)} className="form-control" id="loginPassword" aria-describedby="emailHelp"></input>
                             </div>
-                            <button type="submit" class="btn btn-dark btn-block">Login</button>
+                            <button type="submit" className="btn btn-dark btn-block">Login</button>
                             <br></br>
                             {errorMessage}
                         </form>

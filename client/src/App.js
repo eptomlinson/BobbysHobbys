@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './components/pages/Home';
 import FavoritesPage from "./components/pages/FavoritesPage"
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { useState } from 'react';
 import Login from "./components/Login/Login"
 
@@ -24,25 +24,23 @@ function App() {
       <div className="App">
         <Switch>
 
-          {/* </Route> */}
+          {/* <Route exact path="/" component={Login}/> */}
+
           <Route exact path="/">
+            {isLoggedIn ? <Home toggle={toggle} isLoggedIn={isLoggedIn}/> : <Login toggle={toggle} />}
+          </Route> 
+          <Route exact path="/home" component={Home}/>
+          <Route exact path="/" component={Login}/>
+
+          {/* <Route exact path="/home">
             {isLoggedIn ? <Home toggle={toggle} isLoggedIn={isLoggedIn} /> : <Login toggle={toggle} />}
-          </Route>
+          </Route> */}
 
           <Route exact path="/favorites">
           {/* <Navbar toggle={toggle} isLoggedIn={isLoggedIn} /> */}
-          {true ? <FavoritesPage toggle={toggle} isLoggedIn={true} /> : <Login toggle={toggle} />}
-            {/* <FavoritesPage>
-
-            </FavoritesPage> */}
-
-            {/* {isLoggedIn ?
-              <>
-                <Navbar toggle={toggle} isLoggedIn={isLoggedIn} />
-                <FavoritesPage toggle={toggle} isLoggedIn={isLoggedIn} />
-              </>
-              : <Login toggle={toggle} />} */}
+          {isLoggedIn ? <FavoritesPage toggle={toggle} isLoggedIn={isLoggedIn} /> : <Login toggle={toggle} />}
           </Route>
+          <Route exact path="/favorites" component={FavoritesPage}/>
 
 
         </Switch>

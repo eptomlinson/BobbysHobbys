@@ -23,6 +23,7 @@ const Login = (props) => {
     // console.log(loggedIn);
     // props.toggle(loggedIn)
     const handleSubmit = (e) => {
+
         e.preventDefault()
         console.log("hello")
 
@@ -48,6 +49,7 @@ const Login = (props) => {
                 setEmail('');
             })
         }
+
     }
 
 
@@ -107,9 +109,9 @@ const Login = (props) => {
                 <section className="col-12 col-sm-6 col-md-3">
                     <div className="form-container">
                         <img style={{height:100}} src={transparentBobby} alt="bobby"></img>
-                        {(user) &&
+                        {/* {(user) &&
                             <p>Welcome {user.first_name + " " + user.last_name}!</p>
-                        }
+                        } */}
                         <form className="form-group" onSubmit={handleSubmit}>
                             <label for="exampleInputName">Sign Up</label>
                             <div className="form-group">

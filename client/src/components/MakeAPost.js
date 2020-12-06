@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-// import FileUpload from "./FileUploader.js"
 import categories from "./Modal/categories";
 
 
 function PostModal(props) {
 
-
-
-
   const [imgUrl, setImage] = useState('')
   const [loading, setLoading] = useState(false)
-  
+
 
   const uploadImage = async e => {
     const files = e.target.files
@@ -30,18 +26,18 @@ function PostModal(props) {
     )
     const file = await res.json()
 
-    
+
     setImage(file.secure_url)
     setLoading(false)
-    
-  
+
+
   }
 
-  
+
 
   return (
     <div>
-      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" style={{marginRight: 5}}>
+      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" style={{ marginRight: 5 }}>
         Make a Post!
     </button>
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -54,7 +50,7 @@ function PostModal(props) {
               </button>
             </div>
             <div className="modal-body">
-              <form onSubmit={(e) => {props.submitPost(e, imgUrl) }}>
+              <form onSubmit={(e) => { props.submitPost(e, imgUrl) }}>
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Name</label>
                   <input onChange={props.onChange} name="name" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of your hobby" />
@@ -71,7 +67,7 @@ function PostModal(props) {
                   {loading ? (
                     <p>Creating Image URL...</p>
                   ) : (
-                          <img src={imgUrl} style={{width: 300, height: 200}}/>
+                      <img src={imgUrl} style={{ width: 300, height: 200 }} />
                     )}
                 </div>
                 <div className="form-group">

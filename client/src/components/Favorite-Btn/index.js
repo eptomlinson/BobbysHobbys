@@ -15,7 +15,6 @@ function FavoriteBtn(props) {
         console.log(resp)
         setState(!state);
       })
-      .then(() => {alert("Hobby has been saved.")})
       .catch(error => {
         console.log(error);
       });

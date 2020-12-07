@@ -6,7 +6,7 @@
 
 
 ## Table of contents
-* [General info](#General-info)
+* [General Info](#General-Info)
 * [Link](#Link)
 * [Screenshot](#Screenshot)
 * [Technologies](#Technologies)

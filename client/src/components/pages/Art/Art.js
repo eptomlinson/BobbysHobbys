@@ -5,39 +5,55 @@ import API from "../../../utils/API";
 
 const Art = () => {
   const [art, setArt] = useState([])
-
+  const [favoriteHobbies, setFavoriteHobbies] = useState([]);
 
   useEffect(() => {
     loadArt()
-  },[])
+  }, [])
 
   function loadArt() {
     API.getArt()
-      .then(res => 
-        setArt(res.data)
-      )
-      .catch(err => console.log(err));
+      .then(resArt => {
+        API.getUser()
+          .then(resUser => {
+            setFavoriteHobbies(resUser.data.favoriteHobbies);
+            setArt(resArt.data) // cause render
+            // this will probably not be res.data...
+          })
+          .catch(err => console.log(err));
+        })
+      .catch (err => console.log(err));
   };
-  
 
-  return (
-    <div>
-      <h1 style={{color: "#fff"}}>Art </h1>
-      <Wrapper>
-        {art.map(hobby => (
-          <Card
-            id={hobby._id}
-            key={hobby._id}
-            name={hobby.name}
-            image={hobby.image}
-            cost={hobby.cost}
-            description={hobby.description}
-          />
-        ))}
 
-      </Wrapper>
-    </div>
-  )
+  /**
+   * Returns true if hobby is in favoriteHobbies, undefined othwerwise.
+   * @param {*} hobby 
+   */
+  const isHobbyInFavorites = (hobby) =>  {
+    return favoriteHobbies.find((favHobby) => hobby._id === favHobby._id ); 
+  }
+
+
+return (
+  <div>
+    <h1 style={{ color: "#fff" }}>Art </h1>
+    <Wrapper>
+      {art.map(hobby => (
+        <Card
+          favorited={isHobbyInFavorites(hobby)}
+          id={hobby._id}
+          key={hobby._id}
+          name={hobby.name}
+          image={hobby.image}
+          cost={hobby.cost}
+          description={hobby.description}
+        />
+      ))}
+
+    </Wrapper>
+  </div>
+)
   };
 
 

@@ -5,6 +5,7 @@ import API from "../../../utils/API";
 
 const ThrillSeeking = () => {
   const [thrillSeeking, setThrillSeeking] = useState([])
+  const [favoriteHobbies,  setFavoriteHobbies] = useState([])
 
 
   useEffect(() => {
@@ -13,12 +14,20 @@ const ThrillSeeking = () => {
 
   function loadThrillSeeking() {
     API.getThrillSeeking()
-      .then(res => 
-        setThrillSeeking(res.data)
-      )
+      .then(resThrill => {
+        API.getUser()
+        .then(resUser => {
+          setFavoriteHobbies(resUser.data.favoriteHobbies)
+          setThrillSeeking(resThrill.data)
+        })
+        .catch(err => console.log(err));
+  })
       .catch(err => console.log(err));
   };
   
+ const isHobbyInFavorites = (hobby) =>  {
+   return favoriteHobbies.find((favHobby) => hobby._id === favHobby._id ); 
+ }
 
   return (
     <div>
@@ -26,6 +35,7 @@ const ThrillSeeking = () => {
       <Wrapper>
         {thrillSeeking.map(hobby => (
           <Card
+          favorited={isHobbyInFavorites(hobby)}
             id={hobby._id}
             key={hobby._id}
             name={hobby.name}

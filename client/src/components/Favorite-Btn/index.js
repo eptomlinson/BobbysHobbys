@@ -10,7 +10,7 @@ function FavoriteBtn(props) {
   const [state, setState] = useState(props.favorited|| false);
 
   function toggle(event) {
-    API.toggleFavoriteHobby({ hobby_id: props.hobbyid })
+    API.toggleFavoriteHobby({ hobby_id: props.hobbyId })
       .then(resp => {
         console.log(resp)
         setState(!state);

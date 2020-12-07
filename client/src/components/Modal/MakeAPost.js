@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import categories from "./Modal/categories";
+import categories from "./categories";
+import "./style.css"
 
 
 function PostModal(props) {
@@ -33,14 +34,18 @@ function PostModal(props) {
 
   }
 
+const styles = {
+  backgroundColor:"#1f1f1f67", 
+}
+
 
 
   return (
     <div>
-      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" style={{ marginRight: 5 }}>
-        Make a Post!
+      <button type="button" className="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" style={{ marginRight: 5, fontFamily: `'Assistant', sans-serif`, color:"#E98A15", border: "1px solid #E98A15"}}>
+        Make a Post
     </button>
-      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div style={styles} className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -67,7 +72,7 @@ function PostModal(props) {
                   {loading ? (
                     <p>Creating Image URL...</p>
                   ) : (
-                      <img src={imgUrl} style={{ width: 300, height: 200 }} />
+                      <img src={imgUrl} style={{ width: 200}} />
                     )}
                 </div>
                 <div className="form-group">
@@ -86,11 +91,11 @@ function PostModal(props) {
                     ))}
                   </select>
                 </div>
-                <button type="submit" className="btn btn-primary">Post!</button>
+                <button type="submit" className="btn post-btn btn btn-primary btn-outline-light btn-space">Post</button>
               </form>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="close-modal btn btn-secondary btn-outline-light btn-space" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

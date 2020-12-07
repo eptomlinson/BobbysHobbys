@@ -1,4 +1,5 @@
 const db = require('../models')
+const bcrypt = require("bcrypt");
 const LocalStrategy = require('passport-local').Strategy
 const strategy = new LocalStrategy(
 	{
@@ -7,6 +8,7 @@ const strategy = new LocalStrategy(
 	function(email, password, done) {
    		console.log("hello")
 		db.User.findOne({ email: email }, (err, user) => {
+			console.log("fiding user")
 			if (err) {
 				console.log('normal error')
 				return done(err)

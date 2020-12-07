@@ -1,6 +1,6 @@
 # Bobby's Hobbies
 
-# Genral Info
+# General Info
 > Are you bored? Are you not sure how you want to spend your extra time? Bobbys Hobbies is the right website for you. This website provides a user to be able to view and like different hobbies that other users have uploaded. Also, a user can post their own hobby that they are interested in by providing an image, description, and the cost of the hobby.
 
 ## Table of contents

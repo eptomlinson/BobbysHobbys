@@ -5,27 +5,36 @@ import API from "../../../utils/API";
 
 const Music = () => {
   const [music, setMusic] = useState([])
+  const [favoriteHobbies, setFavoriteHobbies] = useState([])
+
 
   useEffect(() => {
     loadMusic()
-  },[])
+  }, [])
 
   function loadMusic() {
     API.getMusic()
-      .then(res => 
-        setMusic(res.data)
-      )
+      .then(resMusic => {
+        API.getUser()
+          .then(resUser => {
+            setFavoriteHobbies(resUser.data.favoriteHobbies)
+            setMusic(resMusic.data)
+          })
+          .catch(err => console.log(err));
+      })
       .catch(err => console.log(err));
-
-      console.log(music)
   };
-  
+
+  const isHobbyInFavorites = (hobby) => {
+    return favoriteHobbies.find((favHobby) => hobby._id === favHobby._id);
+  }
   return (
     <div>
-      <h1 style={{color: "#fff"}}>Music</h1>
+      <h1 style={{ color: "#fff", fontFamily: `'Bitter', serif`}}>Music</h1>
       <Wrapper>
         {music.map(hobby => (
           <Card
+            favorited={isHobbyInFavorites(hobby)}
             id={hobby._id}
             key={hobby._id}
             name={hobby.name}

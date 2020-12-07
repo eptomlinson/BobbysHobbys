@@ -23,7 +23,7 @@ function FavoriteBtn(props) {
 
   return (
     <div onClick={toggle} className="favorite-btn" {...props} role="button" tabIndex="0">
-      {state ? <img style={{ height: 60 }} src={redfavorite} alt="hobby"></img> : <img style={{ height: 60 }} src={favorite} alt="hobby2"></img>}
+      {state ? <img className="bobbyheart" style={{ height: 60 }} src={redfavorite} className="bobbyheart" alt="hobby"></img> : <img style={{ height: 60 }} src={favorite} alt="hobby2"></img>}
     </div>
 
   );

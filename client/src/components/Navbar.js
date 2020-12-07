@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import PostModal from "./Modal/MakeAPost";
 import API from "../utils/API";
 import whiteorangetransparent from "./whiteorangetransparent.PNG"
-import bobbyround from "./bobbyround.PNG"
+// import bobbyround from "./bobbyround.PNG"
 import bobbyround2 from "./bobbyround2.png"
 import "./navbar.css"
 
@@ -67,7 +67,7 @@ function Navbar(props) {
           <h4 className="text-white">Bobby's Hobbies</h4>
           <span className="text-muted">Your Leisure Liaison</span>
           <Link to="/home">
-            <button className="nav-item nav-link active" style={{ width: '70%', marginLeft: '15%', marginRight: '15%', marginTop: '5%' }}>Home <span className="sr-only">(current)</span></button>
+            <button className="nav-item nav-link active" style={{ width: '70%', marginLeft: '15%', marginRight: '15%', marginTop: '5%', outline: "none", textDecoration: "none" }}>Home <span className="sr-only">(current)</span></button>
           </Link>
         </div>
       </div>

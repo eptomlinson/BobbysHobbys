@@ -1,6 +1,9 @@
 .nav-tabs{
-    /* background-color: rgb(145, 145, 145); */
-    color: white
+    
+    font-family: 'bitter', serif;
+    border: 10px;
+    border-color: #1F1F1F;
+    /* padding: 10px */
 }
 
 .nav-link{
@@ -8,8 +11,13 @@
     color: white
 }
 
+.nav-item{
+    border: 1px solid #1F1F1F;
+    
+}
+
 .nav-link:hover{
-    background-color: #E8BD21;
+    background-color: #f35e2c;
     color: #fff;
 }
 

@@ -1,11 +1,13 @@
 .favorite-btn {
     float: right;
+    outline: none
 
     /* background-color: #e74944; */
 }
 
-.favorite-btn :hover {
-    color: red
+.favorite-btn:hover {
+    color: red; 
+    outline: none
     
     /* background-color: #e74944; */
 }
@@ -15,3 +17,4 @@
    height: 60px
 
 } */
+

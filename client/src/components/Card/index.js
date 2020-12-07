@@ -20,7 +20,7 @@ function Card(props) {
       <div className="content">
         <ul>
           <li>
-            <strong>Name:</strong> {props.name}
+            <strong style={{fontSize:20}}>{props.name}</strong> 
           </li>
           <li>
             <strong>Cost:</strong> {props.cost}
@@ -29,7 +29,7 @@ function Card(props) {
             <strong>Description:</strong> {props.description}
           </li>
        
-          < FavoriteBtn hobbyid={props.id} favorited={props.favorited} />
+          <FavoriteBtn hobbyId={props.id} favorited={props.favorited} />
          
         </ul>
        

@@ -4,10 +4,10 @@ const passport = require('../../passport/index')
 const db = require('../../models')
 
 
-router.post("/login",  function (req, res, next) {
-    next()
-}, passport.authenticate("local", { successRedirect: '/' }), (req, res) => {
+router.post("/login", passport.authenticate("local", {successRedirect: "/"}), (req, res) => {
+    console.log("logged in success");
 });
+
 router.get('/', function(req, res) {
     db.User.find({})
         .then(dbUser => res.json(dbUser))
@@ -19,8 +19,8 @@ router.post('/signup', function(req, res) {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
-        password: req.body.password,
-        favoriteHobbies: [ "5fc818378e37fd7d40eb4986"]
+        password: db.User.generateHash(req.body.password),
+        favoriteHobbies: []
     })
     .then(function(dbUser) {
         console.log(dbUser)
@@ -78,12 +78,13 @@ router.post('/toggleFavoriteHobby', function(req, res) {
 
             // save
             user.save(function(err, user) {
+                console.log("saving");
                 if (err) return console.error(err);
                 res.json({user: user});
                 console.log("User saved succussfully!");
               });
             })
-          .catch(err => res.status(422).json(err));
+          .catch(err => res.json(err));
     });
 })
 

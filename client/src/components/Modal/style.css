@@ -1,0 +1,35 @@
+body{
+    font-family: 'Bitter', serif;
+}
+
+
+
+.post-btn{
+    background-color: #BF3A0D
+}
+
+.close-modal{
+    background-color: black
+}
+.post-btn:hover{
+    border: 1px solid #BF3A0D
+}
+
+.modal-body{
+    background-color: white;
+}
+
+/* @media screen and (min-width: 770px) {
+    .modal-content{
+        width: 600px;
+
+    }
+  }
+  
+  @media screen and (max-width: 771px) {
+    .modal-content {
+     width: 300px;
+
+   }
+
+  } */

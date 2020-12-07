@@ -91,13 +91,6 @@ const Login = (props) => {
                 setUser(res.data)
             })
     }, [])
-    // function Login() {
-    //     passport.authenticate('local', {
-    //         successRedirect: '/home',
-    //         failureRedirect: '/',
-    //         failureFlash: true
-    //     })
-    // }
     return (
         <div>
             {/* {(user) &&
@@ -141,11 +134,6 @@ const Login = (props) => {
                             <br></br>
                             {errorMessage}
                         </form>
-
-
-
-
-
 
                     </div>
                 </section>

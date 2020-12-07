@@ -31,7 +31,7 @@ return (
 
                 <h4 className="h4 mb-4" style={{fontFamily: "arial", color: "#BF3A0D" , fontWeight: "bold"}}>Hobby of the Day</h4>
 
-                <p className="font-weight-normal" style={{fontSize: "25px"}}>"I took up making Sourdough bread during the pandemic and now I'm a bread making machine. I created my own simple recipe and thought it was perfect to share."</p>
+                <p className="font-weight-normal" style={{fontSize: "25px", textAlign: "justify"}}>"I took up making Sourdough bread during the pandemic and now I'm a bread making machine. I created my own simple recipe and thought it was perfect to share."</p>
                 <p className="font-weight-normal" style={{fontSize: "15px", fontFamily: "arial", color: "#E98A15"}}>Submitted by <a><strong>Carine Fox</strong></a>, 8/24/2020</p>
                 <p className="font-weight-normal" style={{fontSize: "12px",  fontFamily: "arial"}}>Learn all of Carine's bread-making tips.</p>
 

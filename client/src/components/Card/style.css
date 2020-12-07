@@ -22,11 +22,12 @@
   }
   
   .card > .content {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.25rem;
+    padding-right: 2rem;
     font-size: 15px;
     /* max-height: 300px; */
     font-family: 'Bitter', serif;
+    text-align: justify;
   }
   
   .card > .content > ul {
@@ -54,5 +55,8 @@
   @media screen and (max-width: 741px) {
     .card > .content{
       font-size: 10px;
+      padding-left: .05rem;
+     
+
     }
   }

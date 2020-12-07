@@ -11,6 +11,7 @@ const Art = () => {
     loadArt()
   }, [])
 
+  // note: if you are running this locally, it loads quite slowly
   function loadArt() {
     API.getArt()
       .then(resArt => {
@@ -18,7 +19,6 @@ const Art = () => {
           .then(resUser => {
             setFavoriteHobbies(resUser.data.favoriteHobbies);
             setArt(resArt.data) // cause render
-            // this will probably not be res.data...
           })
           .catch(err => console.log(err));
         })
@@ -37,7 +37,7 @@ const Art = () => {
 
 return (
   <div>
-    <h1 style={{ color: "#fff" }}>Art </h1>
+    <h1 style={{ color: "#fff", fontFamily: `'Bitter', serif`}}>Art </h1>
     <Wrapper>
       {art.map(hobby => (
         <Card

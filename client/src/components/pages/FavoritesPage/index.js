@@ -25,17 +25,11 @@ console.log(props.isLoggedIn);
         console.log(favorites)
   };
 
-//   function componentRedirect(){
-//   if(props.isLoggedIn){
-//     props.toggle(props.isLoggedIn)
-//   }
-// }
-
   return (
     <>
     <Navbar />
     <div>
-      <h1 style={{color: "#fff"}}>Your Favorites</h1>
+      <h1 style={{ color: "#fff", fontFamily: `'Bitter', serif`}}>Your Favorites</h1>
       <Wrapper>
         {favorites.map(hobby => (
           <Card

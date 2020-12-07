@@ -5,7 +5,7 @@
     margin: 1rem;
     position: relative;
     width: 400px;
-    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    /* box-shadow: 0 3px 6px #999, 0 3px 6px #999; */
     text-align: left;
   }
   
@@ -22,11 +22,10 @@
   }
   
   .card > .content {
-   
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 15px;
-    /* max-height: ; */
+    /* max-height: 300px; */
     font-family: 'Bitter', serif;
   }
   
@@ -39,16 +38,21 @@
     margin-top: 10px;
   }
   
-  /* .card > .remove {
-    color: #ff1744;
-    font-size: 48px;
-    position: absolute;
-    top: -20px;
-    right: 5px;
-    cursor: pointer;
-  } */
   
   .card > .remove:hover {
     color: #d50000;
   }
   
+
+  @media screen and (min-width: 740px) {
+    .card > .content{
+      /* font-size: 15px; */
+    }
+
+  }
+  
+  @media screen and (max-width: 741px) {
+    .card > .content{
+      font-size: 10px;
+    }
+  }

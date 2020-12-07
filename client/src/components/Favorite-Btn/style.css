@@ -5,6 +5,18 @@
     /* background-color: #e74944; */
 }
 
+@media screen and (min-width: 740px) {
+    .bobbyheart{
+      width: 40;
+    }
+  }
+  
+  @media screen and (max-width: 741px) {
+     .bobbyheart{
+        width: 20;
+    }
+  }
+
 .favorite-btn:hover {
     color: red; 
     outline: none

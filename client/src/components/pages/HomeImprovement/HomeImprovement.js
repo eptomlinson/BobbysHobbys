@@ -5,6 +5,8 @@ import API from "../../../utils/API";
 
 const HomeImprovement = () => {
   const [home, setHome] = useState([])
+  const [favoriteHobbies,  setFavoriteHobbies] = useState([])
+
 
   useEffect(() => {
     loadHome()
@@ -12,20 +14,27 @@ const HomeImprovement = () => {
 
   function loadHome() {
     API.getHomeImprovement()
-      .then(res => 
-        setHome(res.data)
-      )
+      .then(resHome => {
+        API.getUser()
+        .then(resUser => {
+          setFavoriteHobbies(resUser.data.favoriteHobbies)
+          setHome(resHome.data)
+        })
+        .catch(err => console.log(err));
+  })
       .catch(err => console.log(err));
-
-      console.log(home)
   };
   
+ const isHobbyInFavorites = (hobby) =>  {
+   return favoriteHobbies.find((favHobby) => hobby._id === favHobby._id ); 
+ }
   return (
     <div>
-      <h1 style={{color: "#fff"}}>Home Improvement</h1>
+      <h1 style={{ color: "#fff", fontFamily: `'Bitter', serif`}}>Home Improvement</h1>
       <Wrapper>
         {home.map(hobby => (
           <Card
+          favorited={isHobbyInFavorites(hobby)}
             id={hobby._id}
             key={hobby._id}
             name={hobby.name}

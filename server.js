@@ -1,10 +1,10 @@
 // Dependencies
-const express = require('express');
+const express = require("express");
 const routes = require("./routes");
 const path = require("path");
-const session = require('express-session');
-const passport = require('./passport/index');
-const mongoose = require('mongoose');
+const session = require("express-session");
+const passport = require("./passport/index");
+const mongoose = require("mongoose");
 const app = express();
 
 // Middleware
@@ -14,59 +14,37 @@ app.use(express.json());
 // Variable Port
 const PORT = process.env.PORT || 3001;
 
-// var conn      = mongoose.createConnection('mongodb://localhost/Passport');
-// var conn2     = mongoose.createConnection('mongodb://localhost/hobbies');
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hobbies", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
-// // stored in 'testA' database
-// var ModelA    = conn.model('Passport', new mongoose.Schema({
-//   title : { type : String, default : 'model in testA database' }
-// }));
+app.use(
+  session({
+    secret: "key",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-// // stored in 'testB' database
-// var ModelB    = conn2.model('hobbies', new mongoose.Schema({
-//   title : { type : String, default : 'model in testB database' }
-// }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-
-
-mongoose.connect(
-    
-	process.env.MONGODB_URI || 'mongodb://localhost/hobbies',
-	{
-	  useNewUrlParser: true,
-	  useUnifiedTopology: true,
-	  useCreateIndex: true,
-	  useFindAndModify: false
-    }
-
-)
-
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hobbies");
-
-app.use(session({
-  secret: "key",
-  resave: false,
-  saveUninitialized: false,
-}))
-
-app.use(passport.initialize())
-app.use(passport.session())
-
-// app.use("/api/users", userRoutes);
 app.use(routes);
 
-
 // If our node environment is production we will serve up our static assets from the build folder
-if (process.env.NODE_ENV === 'production') {
-    // The react app is called 'client' and we are accessing the build folder that is initialized in the postbuild scripts.
-    app.use(express.static('client/build'))
-};
-app.use(express.static('client/build'));
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
+if (process.env.NODE_ENV === "production") {
+  // The react app is called 'client' and we are accessing the build folder that is initialized in the postbuild scripts.
+  app.use(express.static("client/build"));
+}
+app.use(express.static("client/build"));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Start the server
-app.listen(PORT, function() {
-    console.log(`🌎 ==> API server now on port ${PORT}!`);
-  });
+app.listen(PORT, function () {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});

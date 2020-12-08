@@ -1,8 +1,6 @@
 .favorite-btn {
     float: right;
     outline: none
-
-    /* background-color: #e74944; */
 }
 
 @media screen and (min-width: 740px) {
@@ -21,12 +19,6 @@
     color: red; 
     outline: none
     
-    /* background-color: #e74944; */
 }
   
-/* .clicked img{
-    background: url(redfavorite.png);
-   height: 60px
-
-} */
 

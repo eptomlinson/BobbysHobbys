@@ -4,19 +4,18 @@ import Cooking from "./pages/Cooking/Cooking";
 import Exercise from "./pages/Exercise/Exercise";
 import Art from "./pages/Art/Art";
 import Entertainment from "./pages/Entertainment/Entertainment";
-import Games from "./pages/Games/Games"
-import HomeImprovement from "./pages/HomeImprovement/HomeImprovement"
-import Outdoors from "./pages/Outdoors/Outdoors"
+import Games from "./pages/Games/Games";
+import HomeImprovement from "./pages/HomeImprovement/HomeImprovement";
+import Outdoors from "./pages/Outdoors/Outdoors";
 import ThrillSeeking from "./pages/Thrill-Seeking/Thrill-Seeking";
-import Music from "./pages/Music/Music"
-
+import Music from "./pages/Music/Music";
 
 class Portfolio extends Component {
   state = {
-    currentPage: "Art"
+    currentPage: "Art",
   };
 
-  handlePageChange = page => {
+  handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
@@ -27,7 +26,7 @@ class Portfolio extends Component {
       return <Cooking />;
     } else if (this.state.currentPage === "Entertainment") {
       return <Entertainment />;
-    }else if (this.state.currentPage === "Exercise") {
+    } else if (this.state.currentPage === "Exercise") {
       return <Exercise />;
     } else if (this.state.currentPage === "Games") {
       return <Games />;
@@ -35,12 +34,12 @@ class Portfolio extends Component {
       return <HomeImprovement />;
     } else if (this.state.currentPage === "Music") {
       return <Music />;
-    }else if (this.state.currentPage === "Outdoors") {
+    } else if (this.state.currentPage === "Outdoors") {
       return <Outdoors />;
     } else if (this.state.currentPage === "ThrillSeeking") {
       return <ThrillSeeking />;
     }
-  }; 
+  };
 
   render() {
     return (

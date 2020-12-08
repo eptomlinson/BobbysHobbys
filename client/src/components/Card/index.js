@@ -5,11 +5,6 @@ import "./style.css";
 
 function Card(props) {
 
-//   function addToFavorites {
-
-// }
-
-
   return (
       <Wrapper>
     <div className="card">

@@ -1,4 +1,9 @@
 
+.page-footer{
+color: white;
+background-color: black
+}
+
 .form-container{
     background: #fff;;
     padding:20px;
